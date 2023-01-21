@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -34,9 +34,14 @@ export class UplineFormComponent implements OnInit {
     })
   }
 
+  submitNext(upline : NgForm){
+    console.log(this.uplineForm.valid)
+  }
+
 
   getDownline(){
     this.downlineList = [];
+    this.uplineForm.get('downLineName').setValue('');
     let object = {
       Mode : 'downline',
       Cond1 : this.uplineForm.get('Cond1').value
@@ -44,7 +49,7 @@ export class UplineFormComponent implements OnInit {
     this._apiService.uplinePost(object).then((res:any)=>{
       console.log(res);
       if(res.success){
-        this.uplineList = res.returnValue;
+        this.downlineList = res.returnValue;
       }
     })
   }
