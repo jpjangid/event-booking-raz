@@ -37,6 +37,7 @@ import { PricingComponent } from './components/pages/pricing/pricing.component';
 import { ProductsDetailsComponent } from './components/pages/products-details/products-details.component';
 import { ProductsListComponent } from './components/pages/products-list/products-list.component';
 import { TopPlaceComponent } from './components/pages/top-place/top-place.component';
+import { UplineFormComponent } from './components/pages/upline-form/upline-form.component';
 import { VerticalListingsFullWidthComponent } from './components/pages/vertical-listings-full-width/vertical-listings-full-width.component';
 import { VerticalListingsLeftSidebarComponent } from './components/pages/vertical-listings-left-sidebar/vertical-listings-left-sidebar.component';
 import { VerticalListingsRightSidebarComponent } from './components/pages/vertical-listings-right-sidebar/vertical-listings-right-sidebar.component';
@@ -44,6 +45,8 @@ import { VerticalListingsRightSidebarComponent } from './components/pages/vertic
 const routes: Routes = [
     {path: '', component: HomeDemoOneComponent},
     {path: 'registration', component: HowItWorksComponent},
+    {path: 'customerBooking', component: UplineFormComponent},
+    // {path: 'index-2', component: HomeDemoTwoComponent},
     // {path: 'about', component: AboutUsComponent},
     // {path: 'how-it-works', component: HowItWorksPageComponent},
     // {path: 'pricing', component: PricingComponent},
