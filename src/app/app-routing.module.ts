@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HowItWorksComponent } from './components/common/how-it-works/how-it-works.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { AuthorProfileComponent } from './components/pages/author-profile/author-profile.component';
 import { BlogDetailsComponent } from './components/pages/blog-details/blog-details.component';
@@ -43,6 +44,7 @@ import { VerticalListingsRightSidebarComponent } from './components/pages/vertic
 
 const routes: Routes = [
     {path: '', component: HomeDemoOneComponent},
+    {path: 'registration', component: HowItWorksComponent},
     {path: 'customerBooking', component: UplineFormComponent},
     // {path: 'index-2', component: HomeDemoTwoComponent},
     // {path: 'about', component: AboutUsComponent},
