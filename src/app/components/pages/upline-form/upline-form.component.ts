@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -9,9 +9,9 @@ import { ApiService } from 'src/app/api.service';
 })
 export class UplineFormComponent implements OnInit {
 
-  constructor(private _apiService : ApiService) { }
+  constructor(private _apiService : ApiService , private fb : FormBuilder) { }
   
-  uplineForm = new FormGroup({
+  uplineForm = this.fb.group({
     Cond1: new FormControl('', [Validators.required]),
     downLineName: new FormControl('', [Validators.required])
   })
@@ -39,7 +39,7 @@ export class UplineFormComponent implements OnInit {
     if(this.uplineForm.valid){
       let object = {
         upline : this.uplineForm.value?.Cond1,
-        downline : this.uplineForm.value?.downLineName
+        downline : this.uplineForm.value?.downLineName ?? ''
       }
       localStorage.setItem('uplineData' , JSON.stringify(object));
     }
@@ -49,16 +49,22 @@ export class UplineFormComponent implements OnInit {
   getDownline(){
     this.downlineList = [];
     this.uplineForm.get('downLineName').setValue('');
-    let object = {
-      Mode : 'downline',
-      Cond1 : this.uplineForm.get('Cond1').value
+    if(this.uplineForm.get('Cond1').value == '3' || this.uplineForm.get('Cond1').value == '5'){
+      this.uplineForm.setControl('downLineName', this.fb.control(''));
     }
-    this._apiService.uplinePost(object).then((res:any)=>{
-      console.log(res);
-      if(res.success){
-        this.downlineList = res.returnValue;
+    else{
+      this.uplineForm.setControl('downLineName', this.fb.control('' , [Validators.required]));
+      let object = {
+        Mode : 'downline',
+        Cond1 : this.uplineForm.get('Cond1').value
       }
-    })
+      this._apiService.uplinePost(object).then((res:any)=>{
+        console.log(res);
+        if(res.success){
+          this.downlineList = res.returnValue;
+        }
+      })
+    }
   }
 
 }
