@@ -4,9 +4,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { NgxTypedJsModule } from 'ngx-typed-js';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeDemoOneComponent } from './components/pages/home-demo-one/home-demo-one.component';
@@ -75,6 +75,8 @@ import { DashboardMyProfileComponent } from './components/pages/dashboard/dashbo
 import { DashboardAddListingsComponent } from './components/pages/dashboard/dashboard-add-listings/dashboard-add-listings.component';
 import { DashboardBookmarksComponent } from './components/pages/dashboard/dashboard-bookmarks/dashboard-bookmarks.component';
 import { DashboardMyListingsComponent } from './components/pages/dashboard/dashboard-my-listings/dashboard-my-listings.component';
+import { UplineFormComponent } from './components/pages/upline-form/upline-form.component';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -144,7 +146,8 @@ import { DashboardMyListingsComponent } from './components/pages/dashboard/dashb
     DashboardMyProfileComponent,
     DashboardAddListingsComponent,
     DashboardBookmarksComponent,
-    DashboardMyListingsComponent
+    DashboardMyListingsComponent,
+    UplineFormComponent
   ],
   imports: [
     BrowserModule,
@@ -154,9 +157,11 @@ import { DashboardMyListingsComponent } from './components/pages/dashboard/dashb
     SelectDropDownModule,
     NgxTypedJsModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

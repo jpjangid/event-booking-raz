@@ -24,7 +24,7 @@ export class NavbarStyleOneComponent implements OnInit {
   }
 
   bookEvent() {
-    this.route.navigateByUrl('');
+    this.route.navigateByUrl('/customerBooking');
   }
 
 }

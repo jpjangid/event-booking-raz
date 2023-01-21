@@ -1,0 +1,28 @@
+<app-navbar-style-one></app-navbar-style-one>
+<div class="earnings-box">
+    <div class="container booking-form">
+        <form #login="ngForm" [formGroup]="uplineForm" (ngSubmit)="login(login)">
+            <div class="row">
+                <div class="form-group col-lg-12">
+                    <label for="">Upline</label>
+                    <select name="" id="" formControlName="Cond1">
+                        <ng-container *ngFor="let upline of uplineList">
+                            <option [value]="upline.id">{{upline.value}}</option>
+                        </ng-container>
+                    </select>
+                    <!-- <p-dropdown [options]="uplineList" formControlName="Cond1" optionLabel="name" optionValue="value"></p-dropdown> -->
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="">Downline</label>
+                    <select name="" id="" formControlName="downLineName">
+                        <ng-container *ngFor="let upline of downlineList">
+                            <option [value]="upline.id">{{upline.value}}</option>
+                        </ng-container>
+                    </select>
+                    <!-- <p-dropdown [options]="downlineList" formControlName="downLineName" optionLabel="name" optionValue="value"></p-dropdown> -->
+                </div>
+            </div>
+            <button type="submit">Login Now</button>
+        </form>
+    </div>
+</div>
