@@ -38,7 +38,10 @@
                 "src/assets/css/simplebar.min.css",
                 "src/assets/css/dropzone.min.css",
                 "node_modules/magnific-popup/dist/magnific-popup.css",
-                "src/styles.scss"
+                "src/styles.scss",
+                "node_modules/primeicons/primeicons.css",
+                "node_modules/primeng/resources/primeng.min.css",
+                "node_modules/primeng/resources/themes/bootstrap4-light-blue/theme.css"
             ],
             "scripts": [
                 "node_modules/jquery/dist/jquery.min.js",
@@ -138,6 +141,6 @@
     }
   },
   "cli": {
-    "analytics": "c339c9a8-6f5e-4357-94e9-4cde7c1cd5f3"
+    "analytics": false
   }
 }

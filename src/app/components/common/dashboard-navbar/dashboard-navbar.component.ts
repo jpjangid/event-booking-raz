@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppUtility } from 'src/app/interceptor/appUtitlity';
 
 @Component({
   selector: 'app-dashboard-navbar',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardNavbarComponent implements OnInit {
 
-  constructor() { }
+  userProfile : any;
+  constructor(private _utility : AppUtility , private router : Router) { }
 
   ngOnInit(): void {
+    let userData  = this._utility.getLocalStorageDetails();
+    this.userProfile = userData;
+  }
+
+  logout(){
+    localStorage.removeItem('UserObject');
+    this.router.navigateByUrl('/login');
   }
 
 }

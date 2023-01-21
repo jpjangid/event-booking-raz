@@ -38,20 +38,17 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="login" role="tabpanel">
                     <div class="vesax-login">
-                        <!-- <div class="login-with-account">
-                            <span>Login with</span>
-                            <ul>
-                                <li><a href="#" class="facebook"><i class='bx bxl-facebook'></i> Facebook</a></li>
-                                <li><a href="#" class="twitter"><i class='bx bxl-twitter'></i> Twitter</a></li>
-                            </ul>
-                        </div> -->
-                        <!-- <span class="sub-title"><span>Or login with</span></span> -->
-                        <form #login="ngForm" (ngSubmit)="login(login)">
+                        <form #login="ngForm" [formGroup]="loginForm" (ngSubmit)="loginFunction(login)">
                             <div class="form-group">
-                                <input type="text" [(ngModel)]="email" #email="ngModel" placeholder="Enter Email" class="form-control">
+                                <label for=""><b>Username</b></label>
+                                <input type="text"  [class.is-invalid]="login.submitted && loginForm.get('loginName').invalid" formControlName="loginName" placeholder="Enter Username" class="form-control">
+                                <div class="invalid-feedback">Please Enter Username</div>
                             </div>
                             <div class="form-group">
-                                <input type="password" [(ngModel)]="password" #password="ngModel" placeholder="Enter Password" class="form-control">
+                                <label for=""><b>Password</b></label>
+                                <input type="password"  [class.is-invalid]="login.submitted && loginForm.get('password').invalid" formControlName="password" placeholder="Enter Password" class="form-control">
+                                <div class="invalid-feedback">Please Enter Password</div>
+                                <!-- <input type="password" [(ngModel)]="password" #userpsassword="ngModel" name="password" placeholder="Enter Password" class="form-control"> -->
                             </div>
                             <button type="submit">Login Now</button> 
                         </form>

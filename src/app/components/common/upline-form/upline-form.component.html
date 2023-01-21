@@ -1,0 +1,30 @@
+<app-navbar-style-one></app-navbar-style-one>
+<div class="earnings-box">
+    <div class="container booking-form">
+        <form #uplineSubmit="ngForm" [formGroup]="uplineForm" (ngSubmit)="submitNext(uplineSubmit)">
+            <div class="row">
+                <div class="form-group col-lg-12">
+                    <label for=""><b>Upline</b></label>
+                    <select name="" id="" class="form-control form-select" [class.is-invalid]="uplineSubmit.submitted && uplineForm.get('Cond1').invalid"  (change)="getDownline()" formControlName="Cond1">
+                        <option value="" disabled>Select Upline</option>
+                        <ng-container *ngFor="let upline of uplineList">
+                            <option [value]="upline.id">{{upline.value}}</option>
+                        </ng-container>
+                    </select>
+                    <div class="invalid-feedback">Please Select Upline</div>
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for=""><b>Downline</b></label>
+                    <select name="" id="" class="form-control form-select" [class.is-invalid]="uplineSubmit.submitted && uplineForm.get('downLineName').invalid" formControlName="downLineName">
+                        <option value="" disabled>Select Downline</option>
+                        <ng-container *ngFor="let upline of downlineList">
+                            <option [value]="upline.id">{{upline.value}}</option>
+                        </ng-container>
+                    </select>
+                    <div class="invalid-feedback">Please Select Downline</div>
+                </div>
+            </div>
+            <button type="submit">Proceed</button>
+        </form>
+    </div>
+</div>

@@ -18,4 +18,18 @@ export class ApiService {
     }
     return this.http.get(this._baseurl + endpoint).toPromise();
   }
+
+
+  login(object : any){
+    return this.http.post(this._baseurl + 'CustomerBooking/uplineLogin' , object).toPromise();
+  }
+
+  getCustomerBookingByUplineId(object:any){
+    let endpoint = 'CustomerBooking';
+    if (object) {
+      var queryStrings = new HttpParams({ fromObject: object }).toString();
+      endpoint = `${endpoint}?${queryStrings}`;
+    }
+    return this.http.get(this._baseurl + endpoint).toPromise();
+  }
 }

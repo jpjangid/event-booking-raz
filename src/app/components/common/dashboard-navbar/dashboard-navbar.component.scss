@@ -7,8 +7,8 @@
     position: fixed !important;
     animation: unset !important;
     width: calc(100% - 250px) !important;
-    background-color: var(--whiteColor) !important;
-    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.12) !important;
+    background-color: #f4f4f4 !important;
+    // box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.12) !important;
 
     .vesax-nav {
         padding: {
@@ -16,6 +16,10 @@
             right: 30px;
         };
         .navbar {
+            padding: {
+                top: 35px;
+                bottom: 35px;
+            };
             .navbar-nav {
                 margin: {
                     left: 0;
@@ -314,7 +318,7 @@
                 &::before {
                     content: "\f106";
                     position: absolute;
-                    right: 20px;
+                    right: 0;
                     transition: var(--transition);
                     top: 10px;
                     font: {
@@ -340,7 +344,7 @@
                 }
             }
             .menu-profile {
-                padding-right: 26px;
+                // padding-right: 38px;
 
                 img {
                     width: 40px;
@@ -353,7 +357,7 @@
                 .dropdown-menu {
                     padding: 15px 15px 10px;
                     position: absolute;
-                    left: -15px !important;
+                    left: -88px !important;
                     border-radius: 2px;
                     border: none;
                     display: block;
@@ -528,8 +532,8 @@
     }
     .others-option-for-responsive {
         .dot-menu {
-            right: 45px;
-            top: -27px;
+            right: 0;
+            top: -32px;
         }
         .container {
             max-width: 100% !important;
@@ -612,6 +616,13 @@
         }
     }
 
+    .others-option-for-responsive .dot-menu {
+        right: 15px;
+        top: -28px;
+        .profile-nav-item.dropdown .dropdown-menu{
+            left: -4px!important;
+        }
+    }
 }
 /* Min width 1200px to Max width 1355px */
 @media only screen and (min-width: 1200px) and (max-width: 1355px) {
@@ -627,7 +638,7 @@
     }
     .others-option-for-responsive {
         .dot-menu {
-            right: 18px;
+            right: 55px;
             top: -55px;
         }
         .container {
@@ -661,10 +672,42 @@
         }
     }
 
+    .navbar-area .vesax-nav .navbar{
+        padding-top: 30px;
+        padding-bottom: 39px;
+    }
+
+}
+
+@media(min-width : 1356px) and (max-width : 1440px){
+    .navbar-area .vesax-nav .navbar {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
 }
 /* Min width 1550px */
 @media only screen and (min-width: 1550px) {
 
     
+    .navbar-area .vesax-nav .navbar {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
 
 }
+
+
+
+.menu-profile {
+    padding-right: 20px;
+
+    img {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        margin-right: 12px;
+    }
+}
+
+

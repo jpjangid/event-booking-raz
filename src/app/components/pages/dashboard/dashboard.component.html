@@ -3,7 +3,7 @@
 <!-- Start Main Content Wrapper Area -->
 <div class="main-content d-flex flex-column">
 
-    <app-dashboard-navbar></app-dashboard-navbar>
+    <!-- <app-navbar-style-one></app-navbar-style-one> -->
 
     <!-- Breadcrumb Area -->
     <div class="breadcrumb-area" *ngFor="let Content of breadcrumb;">
@@ -16,92 +16,65 @@
     <!-- End Breadcrumb Area -->
 
     <!-- Start -->
-    <div class="notification-alert alert alert-success alert-dismissible fade show" role="alert">
-        Your listing <strong>Hills Hotel</strong> has been approved!
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    <!-- End -->
-
-    <!-- Start -->
     <app-stats></app-stats>
     <!-- End -->
-    
-    <!-- Start -->
-    <div class="row">
-        <div class="col-lg-6 col-md-12">
-            <app-recent-activities></app-recent-activities>
-        </div>
 
-        <div class="col-lg-6 col-md-12">
-            <div class="invoices-box">
-                <h3>Invoices</h3>
+    <!-- <p-table #dt [value]="users" dataKey="id" [rowHover]="true" [rows]="10"
+            responsiveLayout="scroll" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
+            [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [filterDelay]="0" [globalFilterFields]="['name','fName','mobileNo','shopName','city','coupanCode']">
+            <ng-template pTemplate="caption">
+                <span class="p-input-icon-left d-flex align-items-center">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                        placeholder="Global Search" [(ngModel)]="filterval" />
+                            <p-calendar appendTo="body" class="ml-2" dateFormat="dd-mm-yy" placeholder="Bill Date"
+                                 [(ngModel)]="dateFilterVal"
+                                (onSelect)="searchFilter($event)">
+                            </p-calendar>
+                            <p-button type="button" class="ml-2" (click)="reset(dt)" icon="bx bx-reset"></p-button>
+                </span>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>S. No.</th>
+                    <th>Bill No.</th>
+                    <th style="min-width: 150px;">Bill Date</th>
+                    <th>Name</th>
+                    <th>Father's Name</th>
+                    <th>Mobile No.</th>
+                    <th>Shop Name</th>
+                    <th>City</th>
+                    <th>Coupon Code</th>
+                    <th>Aadhar No.</th>
+                    <th>PAN</th>
+                    <th>QR Code</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-customer let-i="rowIndex">
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{customer?.billNo}}</td>
+                    <td>{{customer?.billDate}}</td>
+                    <td>{{customer?.name}}</td>
+                    <td>{{customer?.fName}}</td>
+                    <td>{{customer?.mobileNo}}</td>
+                    <td>{{customer?.shopName}}</td>
+                    <td>{{customer?.city}}</td>
+                    <td>{{customer?.coupanCode}}</td>
+                    <td>{{customer?.aadharCard ? customer?.aadharCard : '-'}}</td>
+                    <td>{{customer?.panCard ? customer?.panCard : '-'}}</td>
+                    <td><a [href]="customer.qrCode" [download]="customer.qrCode" target="_blank"><i class="pi pi-download"></i></a></td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="8">No users found.</td>
+                </tr>
+            </ng-template>
+        </p-table> -->
 
-                <ul>
-                    <li>
-                        <div class="icon">
-                            <i class='bx bx-file-blank'></i>
-                        </div>
-                        <ul>
-                            <li class="paid">Paid</li>
-                            <li>Order: #181815</li>
-                            <li>Date: 14/08/2020</li>
-                        </ul>
-                        <span>Premium Plan</span>
-                        <a href="dashboard-invoice.html" class="default-btn">View Invoice</a>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <i class='bx bx-file-blank'></i>
-                        </div>
-                        <ul>
-                            <li class="unpaid">Unpaid</li>
-                            <li>Order: #181814</li>
-                            <li>Date: 13/08/2020</li>
-                        </ul>
-                        <span>Advance Plan</span>
-                        <a href="dashboard-invoice.html" class="default-btn">View Invoice</a>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <i class='bx bx-file-blank'></i>
-                        </div>
-                        <ul>
-                            <li class="paid">Paid</li>
-                            <li>Order: #181813</li>
-                            <li>Date: 12/08/2020</li>
-                        </ul>
-                        <span>Starter Plan</span>
-                        <a href="#" class="default-btn">View Invoice</a>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <i class='bx bx-file-blank'></i>
-                        </div>
-                        <ul>
-                            <li class="unpaid">Unpaid</li>
-                            <li>Order: #181812</li>
-                            <li>Date: 11/08/2020</li>
-                        </ul>
-                        <span>Basic Plan</span>
-                        <a href="dashboard-invoice.html" class="default-btn">View Invoice</a>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <i class='bx bx-file-blank'></i>
-                        </div>
-                        <ul>
-                            <li class="paid">Paid</li>
-                            <li>Order: #181815</li>
-                            <li>Date: 14/08/2020</li>
-                        </ul>
-                        <span>Premium Plan</span>
-                        <a href="dashboard-invoice.html" class="default-btn">View Invoice</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- End -->
+
 
     <div class="flex-grow-1"></div>
     

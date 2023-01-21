@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-sidemenu',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardSidemenuComponent implements OnInit {
 
-  constructor() { }
+  roleName : any ;
 
-  ngOnInit(): void {
+  state: boolean = false;
+  constructor(private router : Router) { }
+
+  userRole : any;
+  ngOnInit(): void {      
+    let Storage = localStorage.getItem('UserObject');
+    if(Storage){
+      this.userRole = JSON.parse(Storage)
+      this.roleName = JSON.parse(Storage).userName;
+    }
   }
 
+  logOut(){
+    localStorage.removeItem('UserObject');
+    this.router.navigateByUrl('/')
+  }
 }

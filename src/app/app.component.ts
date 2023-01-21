@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationCancel, NavigationEnd } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import { AppUtility } from './interceptor/appUtitlity';
+import { md5 } from 'src/md5';
 declare let $: any;
 
 @Component({
@@ -19,12 +21,13 @@ export class AppComponent {
     location: any;
     routerSubscription: any;
 
-    constructor(private router: Router) {
+    constructor(private router: Router , public _utility : AppUtility) {
     }
 
     ngOnInit(){
         this.recallJsFuntions();
     }
+
 
     recallJsFuntions() {
         this.routerSubscription = this.router.events

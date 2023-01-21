@@ -6,162 +6,165 @@ import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeDemoOneComponent } from './components/pages/home-demo-one/home-demo-one.component';
-import { HomeDemoTwoComponent } from './components/pages/home-demo-two/home-demo-two.component';
-import { AppDownloadComponent } from './components/common/app-download/app-download.component';
-import { HowItWorksComponent } from './components/common/how-it-works/how-it-works.component';
-import { HomeoneBlogComponent } from './components/pages/home-demo-one/homeone-blog/homeone-blog.component';
-import { FeedbackStyleOneComponent } from './components/common/feedback-style-one/feedback-style-one.component';
-import { HomeoneDestinationsComponent } from './components/pages/home-demo-one/homeone-destinations/homeone-destinations.component';
-import { CategoryComponent } from './components/common/category/category.component';
-import { HomeoneListingsComponent } from './components/pages/home-demo-one/homeone-listings/homeone-listings.component';
-import { FeaturesComponent } from './components/common/features/features.component';
-import { HomeoneBannerComponent } from './components/pages/home-demo-one/homeone-banner/homeone-banner.component';
 import { FooterStyleOneComponent } from './components/common/footer-style-one/footer-style-one.component';
 import { NavbarStyleOneComponent } from './components/common/navbar-style-one/navbar-style-one.component';
-import { NavbarStyleTwoComponent } from './components/common/navbar-style-two/navbar-style-two.component';
-import { HometwoBannerComponent } from './components/pages/home-demo-two/hometwo-banner/hometwo-banner.component';
-import { HometwoListingsComponent } from './components/pages/home-demo-two/hometwo-listings/hometwo-listings.component';
-import { HometwoDestinationsComponent } from './components/pages/home-demo-two/hometwo-destinations/hometwo-destinations.component';
-import { HometwoEventsComponent } from './components/pages/home-demo-two/hometwo-events/hometwo-events.component';
-import { HometwoBlogComponent } from './components/pages/home-demo-two/hometwo-blog/hometwo-blog.component';
-import { ComingSoonComponent } from './components/pages/coming-soon/coming-soon.component';
+// import { NavbarStyleTwoComponent } from './components/common/navbar-style-two/navbar-style-two.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
-import { AboutUsComponent } from './components/pages/about-us/about-us.component';
-import { PartnerComponent } from './components/common/partner/partner.component';
-import { TeamComponent } from './components/common/team/team.component';
-import { FunfactsComponent } from './components/common/funfacts/funfacts.component';
-import { HowItWorksPageComponent } from './components/pages/how-it-works-page/how-it-works-page.component';
-import { PricingComponent } from './components/pages/pricing/pricing.component';
-import { GalleryComponent } from './components/pages/gallery/gallery.component';
-import { FaqComponent } from './components/pages/faq/faq.component';
-import { ContactComponent } from './components/pages/contact/contact.component';
-import { FooterStyleTwoComponent } from './components/common/footer-style-two/footer-style-two.component';
-import { BlogGridComponent } from './components/pages/blog-grid/blog-grid.component';
-import { BlogRightSidebarComponent } from './components/pages/blog-right-sidebar/blog-right-sidebar.component';
-import { BlogDetailsComponent } from './components/pages/blog-details/blog-details.component';
-import { ProductsListComponent } from './components/pages/products-list/products-list.component';
-import { CartComponent } from './components/pages/cart/cart.component';
-import { CheckoutComponent } from './components/pages/checkout/checkout.component';
-import { ProductsDetailsComponent } from './components/pages/products-details/products-details.component';
-import { RelatedProductsComponent } from './components/pages/products-details/related-products/related-products.component';
-import { AuthorProfileComponent } from './components/pages/author-profile/author-profile.component';
-import { CategoriesComponent } from './components/pages/categories/categories.component';
-import { TopPlaceComponent } from './components/pages/top-place/top-place.component';
-import { ListingsDetailsComponent } from './components/pages/listings-details/listings-details.component';
-import { EventsDetailsComponent } from './components/pages/events-details/events-details.component';
-import { EventsComponent } from './components/pages/events/events.component';
-import { VerticalListingsLeftSidebarComponent } from './components/pages/vertical-listings-left-sidebar/vertical-listings-left-sidebar.component';
-import { VerticalListingsRightSidebarComponent } from './components/pages/vertical-listings-right-sidebar/vertical-listings-right-sidebar.component';
-import { VerticalListingsFullWidthComponent } from './components/pages/vertical-listings-full-width/vertical-listings-full-width.component';
-import { GridListingsLeftSidebarComponent } from './components/pages/grid-listings-left-sidebar/grid-listings-left-sidebar.component';
-import { GridListingsRightSidebarComponent } from './components/pages/grid-listings-right-sidebar/grid-listings-right-sidebar.component';
-import { GridListingsFullWidthComponent } from './components/pages/grid-listings-full-width/grid-listings-full-width.component';
+import { AccordionModule } from 'primeng/accordion';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { DashboardNavbarComponent } from './components/common/dashboard-navbar/dashboard-navbar.component';
-import { DashboardSidemenuComponent } from './components/common/dashboard-sidemenu/dashboard-sidemenu.component';
 import { CopyrightsComponent } from './components/pages/dashboard/copyrights/copyrights.component';
-import { StatsComponent } from './components/pages/dashboard/stats/stats.component';
-import { RecentActivitiesComponent } from './components/pages/dashboard/recent-activities/recent-activities.component';
-import { DashboardMessagesComponent } from './components/pages/dashboard/dashboard-messages/dashboard-messages.component';
-import { DashboardBookingsComponent } from './components/pages/dashboard/dashboard-bookings/dashboard-bookings.component';
-import { DashboardWalletComponent } from './components/pages/dashboard/dashboard-wallet/dashboard-wallet.component';
-import { DashboardReviewsComponent } from './components/pages/dashboard/dashboard-reviews/dashboard-reviews.component';
-import { DashboardInvoiceComponent } from './components/pages/dashboard/dashboard-invoice/dashboard-invoice.component';
+// import { DashboardWalletComponent } from './components/pages/dashboard/dashboard-wallet/dashboard-wallet.component';
 import { DashboardMyProfileComponent } from './components/pages/dashboard/dashboard-my-profile/dashboard-my-profile.component';
-import { DashboardAddListingsComponent } from './components/pages/dashboard/dashboard-add-listings/dashboard-add-listings.component';
-import { DashboardBookmarksComponent } from './components/pages/dashboard/dashboard-bookmarks/dashboard-bookmarks.component';
-import { DashboardMyListingsComponent } from './components/pages/dashboard/dashboard-my-listings/dashboard-my-listings.component';
-import { UplineFormComponent } from './components/pages/upline-form/upline-form.component';
+// import { DashboardAddListingsComponent } from './components/pages/dashboard/dashboard-add-listings/dashboard-add-listings.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { CalendarModule } from 'primeng/calendar';
+import { SliderModule } from 'primeng/slider';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { InputTextModule } from 'primeng/inputtext';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { BadgeModule } from 'primeng/badge';
+import { MessagesModule } from 'primeng/messages';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { SidebarModule } from 'primeng/sidebar';
+
+// import { CostBreakerComponent } from './components/custom/admin-components/cost-breaker/cost-breakup.component';
+// import { CostComponent } from './components/custom/admin-components/cost/cost.component';
+// import { ItemMasterComponent } from './components/custom/admin-components/item-master/item-master.component';
+// import { RegisterUserComponent } from './components/custom/admin-components/register-user/register-user.component';
+// import { SupplierListComponent } from './components/custom/admin-components/supplier-list/supplier-list.component';
+// import { SupplierOnboardingDataComponent } from './components/custom/admin-components/supplier-onboarding-data/supplier-onboarding-data.component';
+// import { CommonFieldsComponent } from './components/custom/common-components/common-fields/common-fields.component';
+// import { PrimeToastComponent } from './components/custom/common-components/prime-toast/prime-toast.component';
+// import { ReportsComponent } from './components/custom/common-components/reports/reports.component';
+// import { SupplierOnboardingComponent } from './components/custom/supplier-components/supplier-onboarding/supplier-onboarding.component';
+// import { UserAccountComponent } from './components/custom/supplier-components/user-account/user-account.component';
+// import { VerificationFormComponent } from './components/custom/supplier-components/verification-form/verification-form.component';
+// import { EnquiryComparisonComponent } from './components/custom/user-components/enquiry-comparison/enquiry-comparison.component';
+// import { RequestForQuotationComponent } from './components/custom/user-components/request-for-quotation/request-for-quotation.component';
+// import { SupplierAssignListComponent } from './components/custom/user-components/supplier-assign-list/supplier-assign-list.component';
+// import { SupplierAssignComponent } from './components/custom/user-components/supplier-assign/supplier-assign.component';
+// import { SupplierOrderDetailsComponent } from './components/custom/supplier-components/supplier-order-details/supplier-order-details.component';
+// import { APQPComponent } from './components/custom/supplier-components/apqp/apqp.component';
+// import { PpapComponent } from './components/custom/supplier-components/ppap/ppap.component';
+// import { ApqpDocumentComponent } from './components/custom/common-components/apqp-document/apqp-document.component';
+// import { LoanToolAgreementComponent } from './components/custom/supplier-components/loan-tool-agreement/loan-tool-agreement.component';
+// import { ManufacturingProcessListComponent } from './components/custom/admin-components/manufacturing-process-list/manufacturing-process-list.component';
+// import { MaterialConstructionProcessComponent } from './components/custom/admin-components/material-construction-process/material-construction-process.component';
+import { DashboardSidemenuComponent } from './components/common/dashboard-sidemenu/dashboard-sidemenu.component';
+import { RecentActivitiesComponent } from './components/pages/dashboard/recent-activities/recent-activities.component';
+import { StatsComponent } from './components/pages/dashboard/stats/stats.component';
+// import { SupplierFormDetailsComponent } from './components/custom/supplier-components/supplier-form-details/supplier-form-details.component';
+import { GroupbyPipe } from './groupby.pipe';
+import { PasswordModule } from 'primeng/password';
+import { InputNumberModule } from 'primeng/inputnumber';
+// import { DocumentMasterComponent } from './components/custom/common-components/document-master/document-master.component';
+import { SplitPipe } from './split.pipe';
+import { UplineFormComponent } from './components/common/upline-form/upline-form.component';
+import { HowItWorksComponent } from './components/common/how-it-works/how-it-works.component';
+import { HomeDemoOneComponent } from './components/common/home-demo-one/home-demo-one.component';
 import { ApiService } from './api.service';
+import { HomeoneBannerComponent } from './components/common/home-demo-one/homeone-banner/homeone-banner.component';
+// import { CustomerFormComponent } from './components/custom/supplier-components/customer-form/customer-form.component';
+// import { SupplierchangerequestComponent } from './components/custom/supplier-components/supplierchangerequest/supplierchangerequest.component';
+// import { EnquiryComparisonByIdComponent } from './components/custom/user-components/enquiry-comparison-by-id/enquiry-comparison-by-id.component';
+// import { OrdersComponent } from './components/custom/admin-components/orders/orders.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeDemoOneComponent,
-    HomeDemoTwoComponent,
-    AppDownloadComponent,
-    HowItWorksComponent,
-    HomeoneBlogComponent,
-    FeedbackStyleOneComponent,
-    HomeoneDestinationsComponent,
-    CategoryComponent,
-    HomeoneListingsComponent,
-    FeaturesComponent,
-    HomeoneBannerComponent,
     FooterStyleOneComponent,
     NavbarStyleOneComponent,
-    NavbarStyleTwoComponent,
-    HometwoBannerComponent,
-    HometwoListingsComponent,
-    HometwoDestinationsComponent,
-    HometwoEventsComponent,
-    HometwoBlogComponent,
-    ComingSoonComponent,
+    // NavbarStyleTwoComponent,
     NotFoundComponent,
-    AboutUsComponent,
-    PartnerComponent,
-    TeamComponent,
-    FunfactsComponent,
-    HowItWorksPageComponent,
-    PricingComponent,
-    GalleryComponent,
-    FaqComponent,
-    ContactComponent,
-    FooterStyleTwoComponent,
-    BlogGridComponent,
-    BlogRightSidebarComponent,
-    BlogDetailsComponent,
-    ProductsListComponent,
-    CartComponent,
-    CheckoutComponent,
-    ProductsDetailsComponent,
-    RelatedProductsComponent,
-    AuthorProfileComponent,
-    CategoriesComponent,
-    TopPlaceComponent,
-    ListingsDetailsComponent,
-    EventsDetailsComponent,
-    EventsComponent,
-    VerticalListingsLeftSidebarComponent,
-    VerticalListingsRightSidebarComponent,
-    VerticalListingsFullWidthComponent,
-    GridListingsLeftSidebarComponent,
-    GridListingsRightSidebarComponent,
-    GridListingsFullWidthComponent,
     DashboardComponent,
     DashboardNavbarComponent,
     DashboardSidemenuComponent,
     CopyrightsComponent,
-    StatsComponent,
     RecentActivitiesComponent,
-    DashboardMessagesComponent,
-    DashboardBookingsComponent,
-    DashboardWalletComponent,
-    DashboardReviewsComponent,
-    DashboardInvoiceComponent,
+    // DashboardWalletComponent,
     DashboardMyProfileComponent,
-    DashboardAddListingsComponent,
-    DashboardBookmarksComponent,
-    DashboardMyListingsComponent,
-    UplineFormComponent
+    // DashboardAddListingsComponent,
+    //UserAccountComponent,
+    // VerificationFormComponent,
+    // SupplierOnboardingComponent,
+    // ItemMasterComponent,
+    // CostBreakerComponent,
+    // PrimeToastComponent,
+    // RequestForQuotationComponent,
+    // CostComponent,
+    // SupplierAssignComponent,
+    // SupplierListComponent,
+    StatsComponent,
+    HomeoneBannerComponent,
+    // SupplierOnboardingDataComponent,
+    // RegisterUserComponent,
+    // EnquiryComparisonComponent,
+    // ReportsComponent,
+    // CommonFieldsComponent,
+    // SupplierAssignListComponent,
+    // SupplierOrderDetailsComponent,
+    // APQPComponent,
+    // PpapComponent,
+    // ApqpDocumentComponent,
+    // LoanToolAgreementComponent,
+    // ManufacturingProcessListComponent,
+    // MaterialConstructionProcessComponent,
+    // SupplierFormDetailsComponent,
+    GroupbyPipe,
+    // DocumentMasterComponent,
+    SplitPipe,
+    UplineFormComponent,
+    HowItWorksComponent,
+    HomeDemoOneComponent
+    // CustomerFormComponent,
+    // SupplierchangerequestComponent,
+    // EnquiryComparisonByIdComponent,
+    // OrdersComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CarouselModule,
-    SelectDropDownModule,
+    // SelectDropDownModule,
     NgxTypedJsModule,
     FormsModule,
     NgxPaginationModule,
     ReactiveFormsModule,
-    HttpClientModule
+    TableModule,
+    CalendarModule,
+    SliderModule,
+    DialogModule,
+    MultiSelectModule,
+    ContextMenuModule,
+    DropdownModule,
+    ButtonModule,
+    PasswordModule,
+    ToastModule,
+    InputTextModule,
+    ProgressBarModule,
+    ConfirmDialogModule,
+    MessagesModule,
+    BadgeModule,
+    SidebarModule,
+    AccordionModule,
+    InputNumberModule
   ],
-  providers: [ApiService],
+  providers: [ConfirmationService, MessageService,ApiService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
