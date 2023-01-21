@@ -22,8 +22,9 @@
                 border: 1px solid #d5d5d5 !important;
                 border-radius: 5px;
                 background-color: var(--whiteColor) !important;
-                padding-top: 9px;
-                height: 40px;
+                height: 35px;
+                padding: 5px 10px;
+                font-size: 13px;
             }
         }
         button {
@@ -110,4 +111,10 @@
 
     
 
+}
+
+label  {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
 }

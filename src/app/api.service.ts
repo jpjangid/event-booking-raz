@@ -18,4 +18,12 @@ export class ApiService {
     }
     return this.http.get(this._baseurl + endpoint).toPromise();
   }
+
+  getAllCountry() {
+    return this.http.get(this._baseurl + 'Dropdowns/Registration?Mode=country').toPromise()
+  }
+
+  confirmBooking(data:any) {
+    return this.http.post(this._baseurl + 'CustomerBooking', data).toPromise();
+  }
 }
