@@ -19,6 +19,7 @@ export class ApiService {
     return this.http.get(this._baseurl + endpoint).toPromise();
   }
 
+<<<<<<< HEAD
 
   login(object : any){
     return this.http.post(this._baseurl + 'CustomerBooking/uplineLogin' , object).toPromise();
@@ -31,5 +32,13 @@ export class ApiService {
       endpoint = `${endpoint}?${queryStrings}`;
     }
     return this.http.get(this._baseurl + endpoint).toPromise();
+=======
+  getAllCountry() {
+    return this.http.get(this._baseurl + 'Dropdowns/Registration?Mode=country').toPromise()
+  }
+
+  confirmBooking(data:any) {
+    return this.http.post(this._baseurl + 'CustomerBooking', data).toPromise();
+>>>>>>> 98bbc27c63beedb711b785cc707e326fcde09ead
   }
 }

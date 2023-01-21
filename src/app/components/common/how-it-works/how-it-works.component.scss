@@ -33,11 +33,13 @@
   
       .modal-content {
         // background-color: rgba($color: #000000, $alpha: .05);
+        box-shadow: 1px 5px 24px 0 rgb(68 102 242 / 20%);
+        border-radius: 5px;
         background-color: var(--whiteColor);
         border: none;
         border-radius: 0;
-        box-shadow: 5px 5px var(--mainColor);
-        border: 1px solid var(--mainColor);
+        // box-shadow: 5px 5px var(--mainColor);
+        // border: 1px solid var(--mainColor);
         padding: 30px;
         max-width: 768px;
         position: relative;
@@ -469,9 +471,9 @@
     background-color: var(--whiteColor) !important;
     // padding-top: 9px;
     height: 35px;
-    padding: 10px;
+    padding: 5px 10px;
     font-size: 13px;
-    box-shadow: none;
+    box-shadow: none!important;
 }
 .alert.alert-danger {
     width: 100%;
@@ -502,3 +504,13 @@
     padding: 10px 30px 10px;
     transition: var(--transition);
   }
+
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select:focus {
+  box-shadow: none!important;
+}
