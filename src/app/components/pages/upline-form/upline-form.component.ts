@@ -36,6 +36,13 @@ export class UplineFormComponent implements OnInit {
 
   submitNext(upline : NgForm){
     console.log(this.uplineForm.valid)
+    if(this.uplineForm.valid){
+      let object = {
+        upline : this.uplineForm.value?.Cond1,
+        downline : this.uplineForm.value?.downLineName
+      }
+      localStorage.setItem('uplineData' , JSON.stringify(object));
+    }
   }
 
 
