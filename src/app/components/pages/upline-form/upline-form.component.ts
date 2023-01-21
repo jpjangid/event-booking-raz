@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class UplineFormComponent implements OnInit {
 
-  constructor(private _apiService : ApiService , private fb : FormBuilder) { }
+  constructor(private _apiService : ApiService , private fb : FormBuilder , private router : Router) { }
   
   uplineForm = this.fb.group({
     Cond1: new FormControl('', [Validators.required]),
@@ -42,6 +43,7 @@ export class UplineFormComponent implements OnInit {
         downline : this.uplineForm.value?.downLineName ?? ''
       }
       localStorage.setItem('uplineData' , JSON.stringify(object));
+      this.router.navigateByUrl('/registration')
     }
   }
 
