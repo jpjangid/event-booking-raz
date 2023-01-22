@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardGuard } from './AuthGuards/auth-guard.guard';
 import { HomeDemoOneComponent } from './components/common/home-demo-one/home-demo-one.component';
 import { HowItWorksComponent } from './components/common/how-it-works/how-it-works.component';
+import { ReceiptComponent } from './components/common/receipt/receipt.component';
 import { UplineFormComponent } from './components/common/upline-form/upline-form.component';
 // import { CostBreakerComponent } from './components/custom/admin-components/cost-breaker/cost-breakup.component';
 // import { ItemMasterComponent } from './components/custom/admin-components/item-master/item-master.component';
@@ -58,6 +59,7 @@ const routes: Routes = [
     // {path: 'linkGeneration', component: DashboardAddListingsComponent , canActivate : [AuthGuardGuard] , data: {roles: ['User' , 'Admin', 'Normal User', 'Bussiness head']}},
     {path: '', component: HomeDemoOneComponent},
     {path: 'registration', component: HowItWorksComponent},
+    {path: 'receipt/:id', component: ReceiptComponent},
     {path: 'customerBooking', component: UplineFormComponent},
     // Here add new pages component
     // {path: '', redirectTo:'login' , pathMatch: 'full'},

@@ -1,1 +1,66 @@
-<p>receipt works!</p>
+<div class="container">
+    <div class="add-listings-box1">
+        <div style="margin-top: 120px; padding-bottom: 20px;" class="card-qr" *ngIf="user?.customerName">
+            <div class="add-listings-btn text-right p-0">
+                <button class="submit_btn mb-2" (click)="print()" type="submit">Save As PDF</button>
+            </div>
+            <div class="add-card" style="margin: auto;">
+                <div style="display: flex; justify-content: center;">
+                    <img style="width: 80px; margin-bottom: 10px;" src="../../../../assets/img/packagelogo-removebg-preview.png" alt="">
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Customer Booking Id :</b> {{user?.customerBookingId}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Booking Date :</b> {{user?.bookingDate | date}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Customer Name :</b> {{user?.customerName}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Contact Number :</b> {{user?.contactNumber}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Email Address :</b> {{user?.emailAddress}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Address :</b> {{user?.postalAddress}} , {{user?.pinCode}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>State :</b> {{user?.state}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Country :</b> {{user?.countryName}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Payment Mode :</b> {{user?.payMode}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Transactional Id :</b> {{user?.transactionalID}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Payment :</b> {{user?.price | currency : 'INR'}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Booking Quantity :</b> {{user?.bookingQuantity}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Upline Name :</b> {{user?.upLineName}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Downline Name :</b> {{user?.downLineName}}</p>
+                    </div>
+                </div>
+                <img style="width: 80px; display: flex; justify-content: center;" [src]="user?.qrCode" alt="">
+                <p style="font-size: 18px; text-align: center;">{{user?.coupanCode}}</p>
+            </div>
+        </div>
+        <div style="margin-top: 150px;" *ngIf="!user?.customerName">
+            <div style="display: flex; justify-content: center;">
+                <img style="width: 200px;"  src="../../../../assets/img/868804-removebg-preview.png" alt="">
+            </div>
+            <p style="font-size: 20px; text-align: center;">Registration Not Found</p>
+        </div>
+    </div>  
+</div>

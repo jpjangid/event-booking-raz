@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
 
     getReceipt(customer:any){
         console.log(customer);
-        // this.router.navigateByUrl('/receipt' + customer.customerBookingId)
+        this.router.navigateByUrl('/receipt/' + customer.customerBookingId)
     }
 
 };
