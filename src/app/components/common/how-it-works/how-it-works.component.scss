@@ -514,3 +514,7 @@ input::-webkit-inner-spin-button {
 select:focus {
   box-shadow: none!important;
 }
+
+th, td {
+  white-space: nowrap;
+}

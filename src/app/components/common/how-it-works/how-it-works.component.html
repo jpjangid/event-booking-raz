@@ -1,3 +1,7 @@
+<p-toast
+  [breakpoints]="{'575px': {width: '100%', right: '0', left: '0', display: 'flex', 'justify-content': 'center', 'align-items': 'center'}}">
+</p-toast>
+
 <app-navbar-style-one></app-navbar-style-one>
 <div class="parallax">
     <div class="overlay">
@@ -34,11 +38,9 @@
                                     <div class="col-md-6 col-12 mb-2">
                                         <div class="form-group">
                                             <label>Your ID </label>
-                                            <input type="text" class="form-control" name="yourId"
-                                                #yourId="ngModel" [(ngModel)]="bookingData.yourId"
-                                                placeholder="Enter ID" required>
-                                            <div *ngIf="event.submitted || yourId.touched"
-                                                class="alert alert-danger">
+                                            <input type="text" class="form-control" name="yourId" #yourId="ngModel"
+                                                [(ngModel)]="bookingData.yourId" placeholder="Enter ID" required>
+                                            <div *ngIf="event.submitted || yourId.touched" class="alert alert-danger">
                                                 <div *ngIf="yourId.errors?.['required']">
                                                     ID is Required.
                                                 </div>
@@ -48,7 +50,7 @@
                                     <div class="col-md-6 col-12 mb-2">
                                         <div class="form-group">
                                             <label>Booking Quantity </label>
-                                            <input type="number" class="form-control" name="bookingQuantity"
+                                            <input type="number" (blur)="getTotalAmount()" class="form-control" name="bookingQuantity"
                                                 #bookingQuantity="ngModel" [(ngModel)]="bookingData.bookingQuantity"
                                                 placeholder="Enter Booking Quantity" required>
                                             <div *ngIf="event.submitted || bookingQuantity.touched"
@@ -63,8 +65,9 @@
                                         <div class="form-group">
                                             <label>Email </label>
                                             <input type="text" class="form-control" name="emailAddress"
-                                                #emailAddress="ngModel" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" [(ngModel)]="bookingData.emailAddress"
-                                                placeholder="Enter Email" required>
+                                                #emailAddress="ngModel" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                                                [(ngModel)]="bookingData.emailAddress" placeholder="Enter Email"
+                                                required>
                                             <div *ngIf="event.submitted || emailAddress.touched"
                                                 class="alert alert-danger">
                                                 <div *ngIf="emailAddress.errors?.['required']">
@@ -79,8 +82,9 @@
                                     <div class="col-md-6 col-12 mb-2">
                                         <div class="form-group">
                                             <label>Confirm Email </label>
-                                            <input type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" name="event_name"
-                                                #confirmEmailAddress="ngModel" [(ngModel)]="bookingData.confirmEmailAddress"
+                                            <input type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control"
+                                                name="event_name" #confirmEmailAddress="ngModel"
+                                                [(ngModel)]="bookingData.confirmEmailAddress"
                                                 placeholder="Enter Confirm Email" required>
                                             <div *ngIf="event.submitted || confirmEmailAddress.touched"
                                                 class="alert alert-danger">
@@ -105,7 +109,9 @@
                                     <div class="col-md-6 col-12 mb-2">
                                         <div class="form-group">
                                             <label>Contact Number </label>
-                                            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" class="form-control" name="contactNumber"
+                                            <input type="number"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                maxlength="10" class="form-control" name="contactNumber"
                                                 #contactNumber="ngModel" [(ngModel)]="bookingData.contactNumber"
                                                 placeholder="Enter Contact Number" required>
                                             <div *ngIf="event.submitted || contactNumber.touched"
@@ -133,11 +139,9 @@
                                     <div class="col-md-6 col-12 mb-2">
                                         <div class="form-group">
                                             <label>City </label>
-                                            <input type="text" class="form-control" name="city"
-                                                #city="ngModel" [(ngModel)]="bookingData.city"
-                                                placeholder="Enter City" required>
-                                            <div *ngIf="event.submitted || city.touched"
-                                                class="alert alert-danger">
+                                            <input type="text" class="form-control" name="city" #city="ngModel"
+                                                [(ngModel)]="bookingData.city" placeholder="Enter City" required>
+                                            <div *ngIf="event.submitted || city.touched" class="alert alert-danger">
                                                 <div *ngIf="city.errors?.['required']">
                                                     City is Required.
                                                 </div>
@@ -147,11 +151,9 @@
                                     <div class="col-md-6 col-12 mb-2">
                                         <div class="form-group">
                                             <label>State </label>
-                                            <input type="text" class="form-control" name="state"
-                                                #state="ngModel" [(ngModel)]="bookingData.state"
-                                                placeholder="Enter State" required>
-                                            <div *ngIf="event.submitted || state.touched"
-                                                class="alert alert-danger">
+                                            <input type="text" class="form-control" name="state" #state="ngModel"
+                                                [(ngModel)]="bookingData.state" placeholder="Enter State" required>
+                                            <div *ngIf="event.submitted || state.touched" class="alert alert-danger">
                                                 <div *ngIf="state.errors?.['required']">
                                                     State is Required.
                                                 </div>
@@ -161,11 +163,11 @@
                                     <div class="col-md-6 col-12 mb-2">
                                         <div class="form-group">
                                             <label>Pincode </label>
-                                            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6" class="form-control" name="pinCode"
-                                                #pinCode="ngModel" [(ngModel)]="bookingData.pinCode"
-                                                placeholder="Enter Pincode" required>
-                                            <div *ngIf="event.submitted || pinCode.touched"
-                                                class="alert alert-danger">
+                                            <input type="number"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                maxlength="6" class="form-control" name="pinCode" #pinCode="ngModel"
+                                                [(ngModel)]="bookingData.pinCode" placeholder="Enter Pincode" required>
+                                            <div *ngIf="event.submitted || pinCode.touched" class="alert alert-danger">
                                                 <div *ngIf="pinCode.errors?.['required']">
                                                     Pincode is Required.
                                                 </div>
@@ -196,17 +198,19 @@
                                             <div class="col-md-6 col-12 d-flex align-items-center">
                                                 <!-- <label style="visibility: hidden;">Country </label> -->
                                                 <div class="form-check mb-0">
-                                                    <input class="form-check-input" value="online" required [(ngModel)]="bookingData.payMode" type="radio" name="payMode"
+                                                    <input class="form-check-input" value="online" required
+                                                        [(ngModel)]="bookingData.payMode" type="radio" name="payMode"
                                                         id="online">
                                                     <label class="form-check-label" for="online">
                                                         Online
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-12 d-flex align-items-center" >
+                                            <div class="col-md-6 col-12 d-flex align-items-center">
                                                 <!-- <label style="visibility: hidden;">Country </label> -->
                                                 <div class="form-check mb-0">
-                                                    <input class="form-check-input" value="offline" required [(ngModel)]="bookingData.payMode" type="radio" name="payMode"
+                                                    <input class="form-check-input" value="offline" required
+                                                        [(ngModel)]="bookingData.payMode" type="radio" name="payMode"
                                                         id="offline">
                                                     <label class="form-check-label" for="offline">
                                                         Offline
@@ -221,25 +225,26 @@
                                         </div>
                                     </div>
                                 </div>
-                                <table class="table table-responsive"
-                                    style="margin-top: 1rem;">
-                                    <thead>
+
+                                <p-table [value]="tableData" responsiveLayout="scroll">
+                                    <ng-template pTemplate="header">
                                         <tr>
-                                            <th scope="col">Product</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Quantity</th>
-                                            <th scope="col">Total</th>
+                                            <th>Product</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Total</th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Event</th>
-                                            <td>₹ 18000</td>
-                                            <td>0</td>
-                                            <td>₹ 0</td>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" let-data>
+                                        <tr class="p-selectable-row">
+                                            <td>Event</td>
+                                            <td>₹ {{data.price}}</td>
+                                            <td>{{data.Quantity}}</td>
+                                            <td>₹ {{data.Total}}</td>
                                         </tr>
-                                    </tbody>
-                                </table>
+                                    </ng-template>
+                                </p-table>
+
                                 <div class="add-listings-btn">
                                     <button type="submit" class="button my-3">Submit</button>
                                 </div>
