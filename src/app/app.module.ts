@@ -75,6 +75,7 @@ import { HowItWorksComponent } from './components/common/how-it-works/how-it-wor
 import { HomeDemoOneComponent } from './components/common/home-demo-one/home-demo-one.component';
 import { ApiService } from './api.service';
 import { HomeoneBannerComponent } from './components/common/home-demo-one/homeone-banner/homeone-banner.component';
+import { ReceiptComponent } from './components/common/receipt/receipt.component';
 // import { CustomerFormComponent } from './components/custom/supplier-components/customer-form/customer-form.component';
 // import { SupplierchangerequestComponent } from './components/custom/supplier-components/supplierchangerequest/supplierchangerequest.component';
 // import { EnquiryComparisonByIdComponent } from './components/custom/user-components/enquiry-comparison-by-id/enquiry-comparison-by-id.component';
@@ -127,7 +128,8 @@ import { HomeoneBannerComponent } from './components/common/home-demo-one/homeon
     SplitPipe,
     UplineFormComponent,
     HowItWorksComponent,
-    HomeDemoOneComponent
+    HomeDemoOneComponent,
+    ReceiptComponent
     // CustomerFormComponent,
     // SupplierchangerequestComponent,
     // EnquiryComparisonByIdComponent,

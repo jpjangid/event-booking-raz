@@ -9,10 +9,13 @@
 
                     <div class="others-option d-flex align-items-center">
                         <div class="option-item">
-                            <span (click)="bookEvent()"><i class="fa fa-pencil" style="padding-right: 5px;"></i>Book Event</span>
+                            <span (click)="bookEvent()"><i class="bx bx-pencil" style="padding-right: 5px;"></i>Book Event</span>
                         </div>
-                        <div class="option-item">
+                        <div class="option-item" *ngIf="userId == ''">
                             <span data-bs-toggle="modal" data-bs-target="#loginRegisterModal"><i class="flaticon-user"></i> Login</span>
+                        </div>
+                        <div class="option-item" *ngIf="userId != ''">
+                            <span (click)="logOut()"><i class="flaticon-user"></i> Logout</span>
                         </div>
                     </div>
                 </div>
@@ -50,7 +53,7 @@
                                 <div class="invalid-feedback">Please Enter Password</div>
                                 <!-- <input type="password" [(ngModel)]="password" #userpsassword="ngModel" name="password" placeholder="Enter Password" class="form-control"> -->
                             </div>
-                            <button type="submit">Login Now</button> 
+                            <button type="submit" data-bs-dismiss="modal">Login Now</button> 
                         </form>
                         <!-- <span class="dont-account">Don't have an account? <a href="#">Register Now</a></span> -->
                     </div>

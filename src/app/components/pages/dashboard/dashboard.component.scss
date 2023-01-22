@@ -3,11 +3,11 @@
     overflow: hidden;
     background-color: #fafafa;
     min-height: 100vh;
-    padding: {
-        right: 30px;
-        left: 280px;
-        top: 120px;
-    };
+    // padding: {
+    //     right: 30px;
+    //     left: 280px;
+    //     top: 120px;
+    // };
     .listing-area {
         background-color: var(--whiteColor);
         box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, .05);
@@ -392,249 +392,262 @@
 }
 
 /* Max width 767px */
-@media only screen and (max-width: 767px) {
+// @media only screen and (max-width: 767px) {
 
-    .main-content {
-        padding-top: 110px;
-        padding: {
-            right: 15px;
-            left: 15px;
-        };
-        .mean-container {
-            a {
-                &.meanmenu-reveal {
-                    padding-top: 0;
-                    margin-top: -5px;
-                }
-            }
-        }
-        .listing-area {
-            .nav {
-                .nav-item {
-                    margin: {
-                        bottom: 15px;
-                        right: 15px;
-                    };
-                    .nav-link {
-                        font-size: 14px;
-                    }
-                }
-            }
-        }
-    }
-    .breadcrumb-area {
-        display: block;
-        margin-bottom: 30px;
-        text-align: center;
+//     .main-content {
+//         padding-top: 110px;
+//         padding: {
+//             right: 15px;
+//             left: 15px;
+//         };
+//         .mean-container {
+//             a {
+//                 &.meanmenu-reveal {
+//                     padding-top: 0;
+//                     margin-top: -5px;
+//                 }
+//             }
+//         }
+//         .listing-area {
+//             .nav {
+//                 .nav-item {
+//                     margin: {
+//                         bottom: 15px;
+//                         right: 15px;
+//                     };
+//                     .nav-link {
+//                         font-size: 14px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     .breadcrumb-area {
+//         display: block;
+//         margin-bottom: 30px;
+//         text-align: center;
 
-        h1 {
-            padding-right: 0;
-            font-size: 20px;
+//         h1 {
+//             padding-right: 0;
+//             font-size: 20px;
 
-            &::before {
-                display: none;
-            }
-        }
-        .breadcrumb {
-            justify-content: center;
-            padding: {
-                left: 0;
-                top: 10px;
-            };
-            .item {
-                font-size: 14px;
-                margin: {
-                    left: 10px;
-                    right: 10px;
-                };
-                &::before {
-                    top: 3.5px;
-                    line-height: 15px;
-                    right: -17px;
-                    font-size: 15px;
-                }
-                &:first-child {
-                    margin-left: 0;
-                }
-            }
-        }
-    }
-    .recent-activities-box {
-        h3 {
-            padding: 15px 20px;
-        }
-        ul {
-            li {
-                padding: {
-                    top: 20px;
-                    bottom: 20px;
-                    left: 65px;
-                    right: 40px;
-                };
-                .icon {
-                    left: 20px;
-                    line-height: 36px;
-                    width: 35px;
-                    font-size: 16px;
-                    height: 35px;
-                }
-                .close {
-                    right: 15px;
-                    opacity: 1;
-                    visibility: visible;
-                    font-size: 15px;
-                }
-            }
-        }
-    }
-    .invoices-box {
-        h3 {
-            padding: 15px 20px;
-        }
-        ul {
-            li {
-                padding: {
-                    top: 20px;
-                    bottom: 20px;
-                    left: 68px;
-                    right: 15px;
-                };
-                .icon {
-                    left: 20px;
-                    line-height: 36px;
-                    width: 35px;
-                    font-size: 16px;
-                    height: 35px;
-                }
-                span {
-                    font-size: 15px;
-                }
-                .default-btn {
-                    position: relative;
-                    right: 0;
-                    top: 0;
-                    transform: translateY(0);
-                    padding: 6px 19px;
-                    opacity: 1;
-                    visibility: visible;
-                    font-size: 12px;
-                    margin-top: 10px;
-                }
-            }
-        }
-    }
-    .my-profile-box {
-        h3 {
-            padding: 15px 20px;
-        }
-        .profile-box {
-            max-width: 240px;
-        }
-        form {
-            padding: 20px;
-        }
-    }
+//             &::before {
+//                 display: none;
+//             }
+//         }
+//         .breadcrumb {
+//             justify-content: center;
+//             padding: {
+//                 left: 0;
+//                 top: 10px;
+//             };
+//             .item {
+//                 font-size: 14px;
+//                 margin: {
+//                     left: 10px;
+//                     right: 10px;
+//                 };
+//                 &::before {
+//                     top: 3.5px;
+//                     line-height: 15px;
+//                     right: -17px;
+//                     font-size: 15px;
+//                 }
+//                 &:first-child {
+//                     margin-left: 0;
+//                 }
+//             }
+//         }
+//     }
+//     .recent-activities-box {
+//         h3 {
+//             padding: 15px 20px;
+//         }
+//         ul {
+//             li {
+//                 padding: {
+//                     top: 20px;
+//                     bottom: 20px;
+//                     left: 65px;
+//                     right: 40px;
+//                 };
+//                 .icon {
+//                     left: 20px;
+//                     line-height: 36px;
+//                     width: 35px;
+//                     font-size: 16px;
+//                     height: 35px;
+//                 }
+//                 .close {
+//                     right: 15px;
+//                     opacity: 1;
+//                     visibility: visible;
+//                     font-size: 15px;
+//                 }
+//             }
+//         }
+//     }
+//     .invoices-box {
+//         h3 {
+//             padding: 15px 20px;
+//         }
+//         ul {
+//             li {
+//                 padding: {
+//                     top: 20px;
+//                     bottom: 20px;
+//                     left: 68px;
+//                     right: 15px;
+//                 };
+//                 .icon {
+//                     left: 20px;
+//                     line-height: 36px;
+//                     width: 35px;
+//                     font-size: 16px;
+//                     height: 35px;
+//                 }
+//                 span {
+//                     font-size: 15px;
+//                 }
+//                 .default-btn {
+//                     position: relative;
+//                     right: 0;
+//                     top: 0;
+//                     transform: translateY(0);
+//                     padding: 6px 19px;
+//                     opacity: 1;
+//                     visibility: visible;
+//                     font-size: 12px;
+//                     margin-top: 10px;
+//                 }
+//             }
+//         }
+//     }
+//     .my-profile-box {
+//         h3 {
+//             padding: 15px 20px;
+//         }
+//         .profile-box {
+//             max-width: 240px;
+//         }
+//         form {
+//             padding: 20px;
+//         }
+//     }
 
-}
-/* Min width 576px to Max width 767px */
-@media only screen and (min-width: 576px) and (max-width: 767px) {
+// }
+// /* Min width 576px to Max width 767px */
+// @media only screen and (min-width: 576px) and (max-width: 767px) {
 
 
 
-}
-/* Min width 768px to Max width 991px */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+// }
+// /* Min width 768px to Max width 991px */
+// @media only screen and (min-width: 768px) and (max-width: 991px) {
 
-    .main-content {
-        padding-top: 110px;
-        padding: {
-            right: 15px;
-            left: 15px;
-        };
-    }
-    .invoices-box {
-        ul {
-            li {
-                .default-btn {
-                    opacity: 1;
-                    visibility: visible;
-                }
-            }
-        }
-    }
-    .recent-activities-box {
-        ul {
-            li {
-                .close {
-                    opacity: 1;
-                    visibility: visible;
-                }
-            }
-        }
-    }
+//     .main-content {
+//         padding-top: 110px;
+//         padding: {
+//             right: 15px;
+//             left: 15px;
+//         };
+//     }
+//     .invoices-box {
+//         ul {
+//             li {
+//                 .default-btn {
+//                     opacity: 1;
+//                     visibility: visible;
+//                 }
+//             }
+//         }
+//     }
+//     .recent-activities-box {
+//         ul {
+//             li {
+//                 .close {
+//                     opacity: 1;
+//                     visibility: visible;
+//                 }
+//             }
+//         }
+//     }
 
-}
-/* Min width 992px to Max width 1199px */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+// }
+// /* Min width 992px to Max width 1199px */
+// @media only screen and (min-width: 992px) and (max-width: 1199px) {
 
-    .main-content {
-        padding-top: 110px;
-        padding: {
-            right: 15px;
-            left: 15px;
-        };
-    }
-    .invoices-box {
-        ul {
-            li {
-                padding: {
-                    right: 140px;
-                    top: 25px;
-                    bottom: 25px;
-                };
-                .default-btn {
-                    right: 20px;
-                    padding: 6px 15px;
-                    opacity: 1;
-                    visibility: visible;
-                    font-size: 12px;
-                }
-            }
-        }
-    }
-    .breadcrumb-area {
-        margin-bottom: 30px;
-    }
+//     .main-content {
+//         padding-top: 110px;
+//         padding: {
+//             right: 15px;
+//             left: 15px;
+//         };
+//     }
+//     .invoices-box {
+//         ul {
+//             li {
+//                 padding: {
+//                     right: 140px;
+//                     top: 25px;
+//                     bottom: 25px;
+//                 };
+//                 .default-btn {
+//                     right: 20px;
+//                     padding: 6px 15px;
+//                     opacity: 1;
+//                     visibility: visible;
+//                     font-size: 12px;
+//                 }
+//             }
+//         }
+//     }
+//     .breadcrumb-area {
+//         margin-bottom: 30px;
+//     }
 
-}
-/* Min width 1200px to Max width 1355px */
-@media only screen and (min-width: 1200px) and (max-width: 1355px) {
+// }
+// /* Min width 1200px to Max width 1355px */
+// @media only screen and (min-width: 1200px) and (max-width: 1355px) {
 
-    .main-content {
-        .listing-area {
-            .row {
-                .col-xl-4 {
-                    flex: 0 0 50%;
-                    max-width: 50%;
-                }
-            }
-        }
-    }
-    .invoices-box {
-        ul {
-            li {
-                padding: {
-                    top: 25px;
-                    bottom: 25px;
-                };
-            }
-        }
-    }
+//     .main-content {
+//         .listing-area {
+//             .row {
+//                 .col-xl-4 {
+//                     flex: 0 0 50%;
+//                     max-width: 50%;
+//                 }
+//             }
+//         }
+//     }
+//     .invoices-box {
+//         ul {
+//             li {
+//                 padding: {
+//                     top: 25px;
+//                     bottom: 25px;
+//                 };
+//             }
+//         }
+//     }
 
-}
-/* Min width 1550px */
-@media only screen and (min-width: 1550px) {
+// }
+// /* Min width 1550px */
+// @media only screen and (min-width: 1550px) {
 
     
 
+// }
+
+
+
+
+::ng-deep{
+    .p-datatable .p-datatable-thead > tr > th , .p-datatable .p-datatable-tbody > tr > td{
+        white-space: nowrap;
+    }
+
+    .p-button.p-button-icon-only{
+        padding: 0.49rem 0!important;
+    }
 }

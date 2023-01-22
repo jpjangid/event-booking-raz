@@ -1,11 +1,12 @@
-<app-dashboard-sidemenu></app-dashboard-sidemenu>
+<!-- <app-dashboard-sidemenu></app-dashboard-sidemenu> -->
 
 <!-- Start Main Content Wrapper Area -->
 <div class="main-content d-flex flex-column">
 
-    <!-- <app-navbar-style-one></app-navbar-style-one> -->
+    <app-navbar-style-one></app-navbar-style-one>
 
-    <!-- Breadcrumb Area -->
+    <div class="m-lg-5 m-md-2 m-sm-2 m-2">
+        <!-- Breadcrumb Area -->
     <div class="breadcrumb-area" *ngFor="let Content of breadcrumb;">
         <h1>{{Content.title}}</h1>
         <ol class="breadcrumb">
@@ -16,19 +17,21 @@
     <!-- End Breadcrumb Area -->
 
     <!-- Start -->
-    <app-stats></app-stats>
+    <ng-container *ngIf="customerBookingList.length > 0">
+        <app-stats [counter]="customerBookingList[0]"></app-stats>
+    </ng-container>
     <!-- End -->
 
-    <!-- <p-table #dt [value]="users" dataKey="id" [rowHover]="true" [rows]="10"
+    <p-table #dt [value]="customerBookingList" dataKey="id" [rowHover]="true" [rows]="10"
             responsiveLayout="scroll" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
             [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-            [filterDelay]="0" [globalFilterFields]="['name','fName','mobileNo','shopName','city','coupanCode']">
+            [filterDelay]="0" [globalFilterFields]="['name','customerBookingId','payMode','upLineName','customerName','contactNumber', 'emailAddress', 'bookingQuantity', 'transactionalID']">
             <ng-template pTemplate="caption">
                 <span class="p-input-icon-left d-flex align-items-center">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
                         placeholder="Global Search" [(ngModel)]="filterval" />
-                            <p-calendar appendTo="body" class="ml-2" dateFormat="dd-mm-yy" placeholder="Bill Date"
+                            <p-calendar appendTo="body" class="ml-2" dateFormat="dd-mm-yy" placeholder="Booking Date"
                                  [(ngModel)]="dateFilterVal"
                                 (onSelect)="searchFilter($event)">
                             </p-calendar>
@@ -38,33 +41,35 @@
             <ng-template pTemplate="header">
                 <tr>
                     <th>S. No.</th>
-                    <th>Bill No.</th>
-                    <th style="min-width: 150px;">Bill Date</th>
+                    <th>Order Id</th>
+                    <th style="min-width: 150px;">Booking Date</th>
+                    <th>Payment Mode</th>
+                    <th>Downline Name</th>
+                    <th>IR Id</th>
                     <th>Name</th>
-                    <th>Father's Name</th>
                     <th>Mobile No.</th>
-                    <th>Shop Name</th>
-                    <th>City</th>
-                    <th>Coupon Code</th>
-                    <th>Aadhar No.</th>
-                    <th>PAN</th>
-                    <th>QR Code</th>
+                    <th>Email Address</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Reference</th>
+                    <th>Receipt</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-customer let-i="rowIndex">
                 <tr>
                     <td>{{i+1}}</td>
-                    <td>{{customer?.billNo}}</td>
-                    <td>{{customer?.billDate}}</td>
-                    <td>{{customer?.name}}</td>
-                    <td>{{customer?.fName}}</td>
-                    <td>{{customer?.mobileNo}}</td>
-                    <td>{{customer?.shopName}}</td>
-                    <td>{{customer?.city}}</td>
-                    <td>{{customer?.coupanCode}}</td>
-                    <td>{{customer?.aadharCard ? customer?.aadharCard : '-'}}</td>
-                    <td>{{customer?.panCard ? customer?.panCard : '-'}}</td>
-                    <td><a [href]="customer.qrCode" [download]="customer.qrCode" target="_blank"><i class="pi pi-download"></i></a></td>
+                    <td>{{customer?.customerBookingId}}</td>
+                    <td>{{customer?.bookingDate | date}}</td>
+                    <td>{{customer?.payMode}}</td>
+                    <td>{{customer?.downLineName}}</td>
+                    <td>IR Id</td>
+                    <td>{{customer?.customerName}}</td>
+                    <td>{{customer?.contactNumber}}</td>
+                    <td>{{customer?.emailAddress}}</td>
+                    <td>{{customer?.bookingQuantity}}</td>
+                    <td>Approved</td>
+                    <td>{{customer?.transactionalID}}</td>
+                    <td><a (click)="getReceipt(customer)" style="text-decoration: underline; font-size: 12px;">get Receipt</a></td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="emptymessage">
@@ -72,7 +77,8 @@
                     <td colspan="8">No users found.</td>
                 </tr>
             </ng-template>
-        </p-table> -->
+    </p-table>
+    </div>
 
 
 
