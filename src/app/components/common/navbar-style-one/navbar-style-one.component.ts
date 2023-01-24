@@ -18,6 +18,8 @@ export class NavbarStyleOneComponent implements OnInit {
     password: new FormControl('', [Validators.required])
   })
 
+  displayModal : boolean = false
+
 
   ngOnInit(): void {
     let id = localStorage.getItem('eventUser');

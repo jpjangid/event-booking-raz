@@ -13,7 +13,11 @@
  *
  * Learn more in https://angular.io/guide/browser-support
  */
-
+declare global {
+    interface Window {
+        Razorpay: any;
+    }
+ }
 /***************************************************************************************************
  * BROWSER POLYFILLS
  */

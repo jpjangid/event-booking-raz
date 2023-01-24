@@ -1,3 +1,44 @@
+
+.top_header {
+    padding: 0 75px 0 60px;
+    background: #081648;
+    .top_strip {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .contact_info {
+            // display: flex;
+            .contact_number {   
+                color: white;
+                margin: 0;
+            }
+            // .contact_email {
+            //     margin: 0;
+            // }
+        }
+        .btn_div {
+            .user_name {
+                color: white;
+                // font-family: "Montserrat";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                padding-right: 15px;
+            }
+            .login_btn {
+                color: white;
+                text-decoration: underline;
+                // font-family: "Montserrat";
+                font-style: normal;
+                font-weight: 500;
+                list-style: none;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 .header-section {
     position: relative;
     padding: 0;
@@ -1734,4 +1775,22 @@
         }
     }
 
+}
+
+@media (max-width : 525px) {
+    .top_header {
+        padding: 0 15px;
+        .top_strip {
+            .contact_info {
+                .contact_number {
+                    font-size: 10px;
+                }
+            }
+            .btn_div {
+                .login_btn {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
 }

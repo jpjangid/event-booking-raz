@@ -1,4 +1,17 @@
 <!-- Start Navbar Area -->
+<!-- Header Start -->
+<section class="top_header">
+    <div class="top_strip">
+        <div class="contact_info">
+            <p class="contact_number">+91-8890303023 / example@gmail.com</p>
+            <!-- <p class="contact_email"></p> -->
+        </div>
+        <div class="btn_div d-flex align-items-center">
+            <p class="login_btn" (click)="displayModal = true">Terms & Condition</p>
+        </div>
+    </div>
+</section>
+
 <div class="header-section">
     <div class="vesax-nav" style="background: white;">
         <div class="container">
@@ -91,3 +104,16 @@
     </div>
 </div>
 <!-- End Login & Register Modal -->
+
+<p-dialog header="Terms & Condition" [breakpoints]="{'960px': '75vw'}" [style]="{width: '50vw'}" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+    <ul>
+        <li style="margin-bottom: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis at hic tempore, unde nemo, natus sed eveniet possimus quis, temporibus ea veritatis reprehenderit illo recusandae beatae quia harum modi iure!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis at hic tempore, unde nemo, natus sed eveniet possimus quis, temporibus ea veritatis reprehenderit illo recusandae beatae quia harum modi iure!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis at hic tempore, unde nemo, natus sed eveniet possimus quis, temporibus ea veritatis reprehenderit illo recusandae beatae quia harum modi iure!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis at hic tempore, unde nemo, natus sed eveniet possimus quis, temporibus ea veritatis reprehenderit illo recusandae beatae quia harum modi iure!</li>
+    </ul>
+        <ng-template pTemplate="footer">
+        <!-- <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button> -->
+        </ng-template>
+</p-dialog>
