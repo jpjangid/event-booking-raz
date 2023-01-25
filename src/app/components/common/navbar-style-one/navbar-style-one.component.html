@@ -7,7 +7,13 @@
             <!-- <p class="contact_email"></p> -->
         </div>
         <div class="btn_div d-flex align-items-center">
-            <p class="login_btn" (click)="displayModal = true">Terms & Condition</p>
+            <!-- <p class="login_btn" (click)="displayModal = true">Terms & Condition</p> -->
+            <select class="login_btn" name="cars" id="cars" (change)="openModal($event)">
+                <option value="terms" selected disabled>Policies</option>
+                <option value="1">Terms & Condition</option>
+                <option value="2">Privacy Policy</option>
+                <option value="3">Payment Option</option>
+              </select>
         </div>
     </div>
 </section>
@@ -108,10 +114,63 @@
 <p-dialog header="Terms & Condition" [breakpoints]="{'960px': '75vw'}" [style]="{width: '50vw'}" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
     [draggable]="false" [resizable]="false">
     <ul>
-        <li style="margin-bottom: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis at hic tempore, unde nemo, natus sed eveniet possimus quis, temporibus ea veritatis reprehenderit illo recusandae beatae quia harum modi iure!</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis at hic tempore, unde nemo, natus sed eveniet possimus quis, temporibus ea veritatis reprehenderit illo recusandae beatae quia harum modi iure!</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis at hic tempore, unde nemo, natus sed eveniet possimus quis, temporibus ea veritatis reprehenderit illo recusandae beatae quia harum modi iure!</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis at hic tempore, unde nemo, natus sed eveniet possimus quis, temporibus ea veritatis reprehenderit illo recusandae beatae quia harum modi iure!</li>
+        <li style="margin-bottom: 10px;">Check-in : 15 April 2023</li>
+        <li>Check-out : 20 April 2023</li>
+        <li>Rates are per person based on 5 Nights accommodation on twin / triple sharing basis.</li>
+        <li>Hotel Checkin Time :- 02:00 pm</li>
+        <li>Hotel Checkout Time :- 12:00 pm</li>
+        <li>Daily Buffet Breakfast</li>
+        <li>4 days (16, 17, 18 & 19 April) transfer by coaches to venue.</li>
+        <li>Rates excludes credit card Merchant fee.</li>
+        <li>Rates are fully non refundable and non-changeable</li>
+        <li>Specific Hotel will be allotted by your upline.</li>
+        <li>Dates are non-amendable</li>
+        <li>Full payment must be cleared before check in</li>
+        <li>Hotel Name & Details will be shared, one week prior to the event.</li>
+        <li>Any Loss or Damage in hotel premises penalty will be pay to the hotel directly</li>
+        <li>Any additional services which is not complimentary such as Extra internet usage, extra water bottles, room services, Mini Bar etc. will be paid directly to Hotel</li>
+        <li>Smoking is prohibited in all hotels... if hotel found someone guilty he/she need to pay penalty.</li>
+        <li>If you make a booking and money is deducted, you should wait for 24 - 48hrs and if you do not receive email confirmation till then, please email us hotel.booking@adorntourism.com
+            mentioning the following details: -</li>
+            <br>
+            <li style="list-style: none;">IR ID Used for booking</li>
+            <li style="list-style: none;">Name for whom Booking was done /</li>
+            <li style="list-style: none;">Name of ISB Upline/</li>
+            <li style="list-style: none;">Date of Booking/</li>
+            <li style="list-style: none;">Time of Booking/</li>
+            <li style="list-style: none;">Amount deducted</li>
+    </ul>
+        <ng-template pTemplate="footer">
+        <!-- <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button> -->
+        </ng-template>
+</p-dialog>
+<p-dialog header="Privacy Policy" [breakpoints]="{'960px': '75vw'}" [style]="{width: '50vw'}" [(visible)]="displayModal1" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+    <ul>
+        <li style="margin-bottom: 10px;">Adorn Tourism Pvt Ltd , including all legal entities , respects your (customers) (hereafter referred as “you” or “user”) privacy and values our relationship with our business partners, clients, third party who have contractual relationship with us (hereafter referred as “third party” or “service provider”) and any party who purchase / intend to purchase / inquire about any product(s) and / or service(s) made available by us through any of our customer interface channels including website, mobile site, mobile app & offline channels including call centers and offices (collectively referred herein as "Sales Channels"). </li>
+        <li>We are committed to protecting your personally identifiable information by which you can be identified (hereafter referred as “information” or “personal information” or “personal data” or “special category of personal data”) by handling it responsibly and safeguarding it using appropriate technical and organizational measures.</li>
+        <li>Rates are per person based on 5 Nights accommodation on twin / triple sharing basis.</li>
+        <li>We would like to assure you that we follow appropriate standards when it comes to protecting your privacy on our Sales Channel. This policy outlines the types of personal information collected on our Website, how this data is used/processed and safeguarded as well as how users may exercise their rights with respect to personal information.</li>
+        <li>This Privacy Policy applies to adorntourism.com and services (“Services”), including off-site Services, such as our email services, customer care and support services and the “Contact us”; “Apply with us” and “Share on” plugins on our digital properties.</li>
+        <li>By using or accessing the Website or other Sales Channels, the user hereby agrees with the terms of this Privacy Policy and the contents here in.</li>
+        <li>This Privacy Policy does not apply to any website(s), mobile sites and mobile apps of third parties, even if their websites/products are linked to our Website. User should take note that information and privacy practices of Yatra’ s business partners, advertisers, sponsors or other sites to which we provides hyperlink(s), may be materially different from this Privacy Policy. Accordingly, it is recommended that you review the privacy statements and policies of any such third parties.</li>
+    </ul>
+        <ng-template pTemplate="footer">
+        <!-- <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button> -->
+        </ng-template>
+</p-dialog>
+<p-dialog header="Payment Option" [breakpoints]="{'960px': '75vw'}" [style]="{width: '50vw'}" [(visible)]="displayModal2" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+    <ul>
+        <li style="margin-bottom: 10px;">Internet Banking</li><li style="list-style: none;">
+            Visa, Master and American Express Card payments are processed through an online payment gateway system. You need not worry about your card information falling into the wrong hands because your bank will authorize the card transaction directly without any information passing through us. In approximately 25-30 seconds (depending on your internet connection) your bank will issue, using the online payment gateway, an authorization code and confirmation of completion of transaction.
+            You can book your product using SSL encryption (the internet standard for secure transactions). In fact, transacting online with a credit card at the website is even safer than using a credit card at a restaurant because we do not retain your credit card information.
+            If the payment on the credit card is declined for some reason, alternate payment instructions must be received 72 hours prior to the time of departure; else, the order is liable to be cancelled.</li>
+        <li style="margin-bottom: 10px;">Online Card Payments</li><li style="list-style: none;">
+            If you have an account with any of the below mentioned banks, then you can pay for your order through the respective bank's net banking options and the amount will be automatically debited from your account. we processes payments through an online gateway system which enables safe and secure transactions.
+Transaction Confirmation
+You should not take any action based on information on the Website until you have received a confirmation of your transaction. In case of confirmations to be received by email, if you do not receive a confirmation of your purchase/transaction within the stipulated time period, first look into your "spam" or "junk" folder to verify that it has not been misdirected, and if still not found, please contact us.</li>
+        
     </ul>
         <ng-template pTemplate="footer">
         <!-- <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button> -->

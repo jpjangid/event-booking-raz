@@ -19,6 +19,8 @@ export class NavbarStyleOneComponent implements OnInit {
   })
 
   displayModal : boolean = false
+  displayModal1 : boolean = false
+  displayModal2 : boolean = false
 
 
   ngOnInit(): void {
@@ -42,6 +44,19 @@ export class NavbarStyleOneComponent implements OnInit {
           this.router.navigate(['/dashboard']);
         }
       })
+    }
+  }
+
+  openModal(event : any) {
+    console.log(event.target.value);
+    if(event.target.value == '1') {
+      this.displayModal = true;
+    }
+    else if(event?.target.value == '2') {
+      this.displayModal1 = true;
+    }
+    else if(event?.target.value == '3') {
+      this.displayModal2 = true;
     }
   }
 
