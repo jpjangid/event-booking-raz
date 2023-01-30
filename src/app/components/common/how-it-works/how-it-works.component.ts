@@ -18,7 +18,7 @@ export class HowItWorksComponent implements OnInit {
 
     country: any = []
 
-    tableData: any = [{ name: 'Event', price: '18000', Quantity: '0', Total: '0' }]
+    tableData: any = [{ name: 'Event', price: '17200', Quantity: '0', Total: '0' }]
 
     ngOnInit() {
         this._apiService.getAllCountry().then((res: any) => {

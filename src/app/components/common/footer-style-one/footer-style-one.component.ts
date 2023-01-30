@@ -12,4 +12,9 @@ export class FooterStyleOneComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    displayModal : boolean = false
+    displayModal1 : boolean = false
+    displayModal2 : boolean = false
+  
+
 }

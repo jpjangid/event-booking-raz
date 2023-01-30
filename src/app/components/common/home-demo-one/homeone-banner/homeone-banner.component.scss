@@ -7,14 +7,87 @@
     // height: 70vh;
     img {
         width: 100%;
-        height: 75vh;
+        height: auto;
     }
 }
+.button_div {
+    display: none;
+}
+
 
 @media (max-width : 525px) {
     .main-banner-area {
         img {
-            height: 60vh;
+            height: auto;
+        }
+    }
+    .button_div {
+        padding: 30px 15px;display: flex;justify-content: center;
+        .option-item {
+            border: 1px solid #0A1847;
+            border-radius: 5px;
+            // margin-left: 25px;
+            padding: 5px 20px;
+            width: fit-content;
+            background: #0A1847;
+            // text-align: center;
+        
+            
+            &:first-child {
+                margin-left: 0;
+            }
+            span {
+                display: inline-block;
+                cursor: pointer;
+                color: white;
+                transition: var(--transition);
+                font-weight: 500;
+                position: relative;
+                
+                i {
+                    margin-right: 2px;
+                    color: white;
+                    position: relative;
+                    top: 1px;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: var(--mainColor);
+                    transition: var(--transition);
+                    transform: scaleX(0);
+                }
+                &:hover {
+                    color: var(--mainColor);
+        
+                    &::before {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+            .default-btn {
+                position: relative;
+                box-shadow: unset !important;
+                border-radius: 30px;
+                background-color: transparent;
+                color: var(--mainColor);
+                font-weight: 500;
+                padding: {
+                    top: 11px;
+                    bottom: 11px;
+                };
+                i {
+                    margin-right: 5px;
+                }
+                &:hover {
+                    background-color: var(--mainColor);
+                    color: var(--whiteColor);
+                }
+            }
         }
     }
 }   

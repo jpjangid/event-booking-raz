@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-homeone-banner',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeoneBannerComponent implements OnInit {
 
-    constructor() { }
+    constructor(private router : Router) { }
 
     ngOnInit(): void {
         this.resetOption = [this.options[0]];
@@ -83,5 +84,9 @@ export class HomeoneBannerComponent implements OnInit {
     reset() {
         this.resetOption = [];
     }
+
+    bookEvent() {
+        this.router.navigateByUrl('/customerBooking');
+      }
 
 }

@@ -1,11 +1,11 @@
 
 .top_header {
-    padding: 0 75px 0 60px;
+    padding: 0 60px 0 60px;
     background: #081648;
     .top_strip {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: end;
         .contact_info {
             // display: flex;
             .contact_number {   
@@ -63,11 +63,8 @@
 }
 .vesax-nav {
     // padding: 20px 0;
-    .container-fluid {
-        padding: {
-            left: 20px;
-            right: 20px;
-        };
+    .containers {
+        padding: 0 60px;
     }
     .navbar {
         position: inherit;
@@ -75,7 +72,7 @@
         display: flex;
         justify-content: space-between;
         img {
-            width: 9%;
+            width: 19%;
         }
         .navbar-brand {
             font-size: inherit;
@@ -615,11 +612,12 @@
                     border: 1px solid #0A1847;
                     border-radius: 5px;
                     padding: 5px 15px;
+                    background: #081648;
                     span {
-                        color: #0A1847;
+                        color: white;
                         
                         i {
-                            color: #0A1847;
+                            color: white;
                             transition: var(--transition);
                         }
                         // &:hover {
@@ -1332,7 +1330,7 @@
         display: block;
         .navbar {
             img { 
-                width: 20%;
+                width: 35%;
             }
             .others-option {
                 .option-item {
@@ -1728,8 +1726,8 @@
             .others-option {
                 .option-item {
                     margin: {
-                        left: 0;
-                        right: 25px;
+                        left: 25px;
+                        // right: 25px;
                     };
                     .default-btn {
                         display: none;
@@ -1787,14 +1785,28 @@
         .top_strip {
             .contact_info {
                 .contact_number {
-                    font-size: 10px;
+                    font-size: 11px;
                 }
             }
             .btn_div {
                 .login_btn {
-                    font-size: 10px;
+                    font-size: 11px;
                 }
             }
+        }
+    }
+    .book_event {
+        display: none;
+    }
+    .vesax-nav {
+        // padding: 20px 0;
+        .containers {
+            padding:  0 15px;
+        } 
+    }
+    .option-item {
+        span {
+            font-size: 11px;
         }
     }
 }
