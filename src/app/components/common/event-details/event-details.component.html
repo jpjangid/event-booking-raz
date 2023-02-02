@@ -1,0 +1,58 @@
+<!-- <app-dashboard-sidemenu></app-dashboard-sidemenu> -->
+
+<!-- Start Main Content Wrapper Area -->
+<div class="main-content d-flex flex-column">
+
+    <app-navbar-style-one></app-navbar-style-one>
+
+    <div class="container">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+                        <p-galleria [value]="images.data" [numVisible]="5" [showItemNavigators]="true" [showThumbnails]="false">
+                            <ng-template pTemplate="item" let-item>
+                                <img class="preview-image" [src]="item.previewImageSrc" [alt]="item.alt" />
+                            </ng-template>
+                            <ng-template pTemplate="thumbnail" let-item>
+                                <div class="grid grid-nogutter justify-content-center">
+                                    <img class="thumbnails" [src]="item.thumbnailImageSrc" />
+                                </div>
+                            </ng-template>
+                        </p-galleria>  						
+					</div>
+					<div class="details col-md-6">
+						<div class="div">
+                            <p class="product-title1 m-0">Dubai Luxury</p>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis unde quibusdam, quis officia voluptatum architecto, temporibus recusandae repellat vel voluptatem neque ipsum earum illum. Quis cumque atque vel enim est?</span><br>
+                            <div class=" py-2">
+                                <p class="m-0">4N Dubai | Valid Till : December 19, 2019</p>
+                                <p>4 Nights  | 5 Days </p>
+                            </div>
+                            <h3 class="product-title"> INR 17,290</h3>
+                            <div class="add-listings-btn">
+                                <button class="submit_btn">Book Now</button>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <div class="card card-details">
+            <p-tabView>
+                <p-tabPanel header="Inclusion">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </p-tabPanel>
+            </p-tabView>
+        </div>
+        
+	</div>
+
+
+
+    <!-- <div class="flex-grow-1"></div> -->
+    <!-- <app-copyrights class="mx-3"></app-copyrights> -->  
+</div>
