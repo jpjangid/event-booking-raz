@@ -27,12 +27,14 @@ export class UplineFormComponent implements OnInit {
     let object = {
       Mode : 'upline'
     }
+    // this.spinner.show();
     this._apiService.uplinePost(object).then((res:any)=>{
       console.log(res);
       if(res.success){
         this.uplineList = res.returnValue;
       }
     })
+    // this.spinner.hide();
   }
 
   submitNext(upline : NgForm){

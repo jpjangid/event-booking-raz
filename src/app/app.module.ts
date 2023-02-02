@@ -23,6 +23,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { CalendarModule } from 'primeng/calendar';
+// import { NgxSpinnerModule } from "ngx-spinner";
 import { SliderModule } from 'primeng/slider';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ContextMenuModule } from 'primeng/contextmenu';
@@ -146,6 +147,7 @@ import { ReceiptComponent } from './components/common/receipt/receipt.component'
     NgxTypedJsModule,
     FormsModule,
     NgxPaginationModule,
+    // NgxSpinnerModule,
     ReactiveFormsModule,
     TableModule,
     CalendarModule,

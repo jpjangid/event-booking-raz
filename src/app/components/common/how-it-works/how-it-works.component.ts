@@ -14,7 +14,7 @@ export class HowItWorksComponent implements OnInit {
 
     constructor(private _apiService: ApiService, private messageService: MessageService) { }
 
-    bookingData: any = { countryId: null };
+    bookingData: any = { countryId: null,payMode : true };
 
     country: any = []
 
@@ -35,11 +35,12 @@ export class HowItWorksComponent implements OnInit {
         this.bookingData.downLineId = data?.downline;
         this.bookingData.contactNumber = String(this.bookingData.contactNumber);
         this.bookingData.pinCode = String(this.bookingData.pinCode);
+        this.bookingData.amount = this.tableData[0].price;
         if (form.valid) {
             if(this.bookingData.upLineId) {
-                this.payment('order',this.tableData.Total)
-                this._apiService.confirmBooking(this.bookingData).then((res: any) => {
-                    console.log(res);
+              this._apiService.confirmBooking(this.bookingData).then((res: any) => {
+                console.log(res);
+                  this.payment('order_LBfwS0Pkr2djzL',this.tableData.Total)
                 })
             }
             else {

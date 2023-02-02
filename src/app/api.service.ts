@@ -37,7 +37,7 @@ export class ApiService {
   }
 
   confirmBooking(data:any) {
-    return this.http.post(this._baseurl + 'CustomerBooking', data).toPromise();
+    return this.http.post(this._baseurl + 'CustomerBooking/OrderId', data, {responseType : 'blob'}).toPromise();
   }
 
   createOrderID(object:any) {
