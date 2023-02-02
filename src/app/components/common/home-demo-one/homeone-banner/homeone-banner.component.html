@@ -1,10 +1,100 @@
 <!-- Start Main Banner Area -->
 <div class="main-banner-area" style="cursor: pointer;">
-    <img src="assets/img/logo.jpeg" alt="">
-</div>
-<div class="button_div">
-    <div class="option-item">
-        <span (click)="bookEvent()"><i class="bx bx-pencil" style="padding-right: 5px;"></i>Book Event</span>
+
+    <div class="banner_carousel">
+        <p-carousel [value]="banners" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="3000">
+          <ng-template let-product pTemplate="item">
+              <div class="product-item">
+                  <div class="product-item-content">
+                      <div class="carousel_img_div">
+                          <img src="{{product.image}}" class="product-image" />
+                      </div>
+                  </div>
+              </div>
+          </ng-template>
+      </p-carousel>
     </div>
+
+    <div class="popular_packages container">
+        <h2 class="text-center package_heading">POPULAR PACKAGES </h2>
+        <div class="row m-0">
+            <ng-container *ngFor="let item of packages;index as index">
+                <div class="col-md-4 col-12">
+                    <div class="backlayer">
+                        <img src="{{item.image}}" alt="">
+                        <div class="strip">
+                            <h5 class="text-center">{{item.name}}</h5>
+                            <h5 class="text-center" style="color: navy;">{{item.price}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+    <div class="cta_section">
+        <img src="assets/img/logo.jpeg" alt="">
+        <div class="button_div">
+            <div class="option-item">
+                <span (click)="bookEvent()"><i class="bx bx-pencil" style="padding-right: 5px;"></i>Book Event</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="contact" #contact>
+        <div class="container" data-aos="fade-up">
+          <div class="row">
+            <div class="col-lg-7 mb-5 mt-lg-0 d-block align-items-stretch" style="justify-content: center;">
+              <div class="section-title">
+                <h2>ABOUT US</h2>
+              </div>
+              <div class="row content info m-0">
+                <div class="col-12">
+                  <p style="padding-left: 0;">
+                    Adorn Tourism Pvt. Ltd. is a full-service travel Company, that serves business and leisure clients who require professional, friendly and efficient organization of their International and Domestic travel & tourism needs.
+                    We offer you all types of tour packages such as Group Tours, Corporates Event,
+                    Educational Tour, Honeymoon Packages, Business tour, and also personal tours. The company is equipped to
+                    serve not only individual tourists but also incentive groups and also organizes events of all types and sizes. 
+                    Adorn Tourism Pvt Ltd has kept a fleet of vehicles to accommodate different terrains and group sizes.
+                    An experienced, professional and Well-known guides assists you during your tour to provide a reliable experience to
+                    the tourists.
+                    Adorn Tourism Pvt. Ltd. is specialized in providing the best services with an experience of few years.
+                    We guarantee the best and affordable prices for all types of package.
+                    We assure you to provide 24×7 customer support for a pleasant time and
+                    comfortable journey. The tour packages and service offered by Adorn Tourism Pvt Ltd helps you to relish the
+                    grace, beauty and charm of the really amazing destinations.
+                    
+                    We wish to work with you we expect to have a stronger & reliable business venture with your organization.
+                  </p>
+                  <!-- <a href="#" class="btn-learn-more">Learn More</a> -->
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-5 d-block align-items-stretch">
+              <div class="section-title">
+                <h2>CONTACT US</h2>
+              </div>
+              <div class="info" style="display: inline-grid; align-items: center;">
+                <div class="email">
+                  <i class="pi pi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>ops@adorntourism.com</p>
+                </div>
+  
+                <div class="phone">
+                  <i class="pi pi-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+91 - 7976881807</p>
+                </div>
+              </div>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+      </section>
+
 </div>
 <!-- End Main Banner Area -->
