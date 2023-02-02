@@ -20,7 +20,7 @@
         <div class="row m-0">
             <ng-container *ngFor="let item of packages;index as index">
                 <div class="col-md-4 col-12">
-                    <div class="backlayer">
+                    <div class="backlayer" routerLink="event-detail/{{item.id}}">
                         <img src="{{item.image}}" alt="">
                         <div class="strip">
                             <h5 class="text-center">{{item.name}}</h5>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardGuard } from './AuthGuards/auth-guard.guard';
+import { EventDetailsComponent } from './components/common/event-details/event-details.component';
 import { HomeDemoOneComponent } from './components/common/home-demo-one/home-demo-one.component';
 import { HowItWorksComponent } from './components/common/how-it-works/how-it-works.component';
 import { ReceiptComponent } from './components/common/receipt/receipt.component';
@@ -61,6 +62,7 @@ const routes: Routes = [
     {path: 'registration', component: HowItWorksComponent},
     {path: 'receipt/:id', component: ReceiptComponent},
     {path: 'customerBooking', component: UplineFormComponent},
+    {path: 'event-detail/:id', component: EventDetailsComponent},
     // Here add new pages component
     // {path: '', redirectTo:'login' , pathMatch: 'full'},
     // {path: 'register/:email', component: UserAccountComponent , pathMatch: 'full'},

@@ -38,6 +38,7 @@ import { BadgeModule } from 'primeng/badge';
 import { MessagesModule } from 'primeng/messages';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { SidebarModule } from 'primeng/sidebar';
+import { GalleriaModule} from 'primeng/galleria';
 import { CarouselModule } from 'primeng/carousel';
 
 // import { CostBreakerComponent } from './components/custom/admin-components/cost-breaker/cost-breakup.component';
@@ -78,11 +79,12 @@ import { HomeDemoOneComponent } from './components/common/home-demo-one/home-dem
 import { ApiService } from './api.service';
 import { HomeoneBannerComponent } from './components/common/home-demo-one/homeone-banner/homeone-banner.component';
 import { ReceiptComponent } from './components/common/receipt/receipt.component';
+import { EventDetailsComponent } from './components/common/event-details/event-details.component';
 // import { CustomerFormComponent } from './components/custom/supplier-components/customer-form/customer-form.component';
 // import { SupplierchangerequestComponent } from './components/custom/supplier-components/supplierchangerequest/supplierchangerequest.component';
 // import { EnquiryComparisonByIdComponent } from './components/custom/user-components/enquiry-comparison-by-id/enquiry-comparison-by-id.component';
 // import { OrdersComponent } from './components/custom/admin-components/orders/orders.component';
-
+import {TabViewModule} from 'primeng/tabview';
 
 @NgModule({
   declarations: [
@@ -131,7 +133,8 @@ import { ReceiptComponent } from './components/common/receipt/receipt.component'
     UplineFormComponent,
     HowItWorksComponent,
     HomeDemoOneComponent,
-    ReceiptComponent
+    ReceiptComponent,
+    EventDetailsComponent
     // CustomerFormComponent,
     // SupplierchangerequestComponent,
     // EnquiryComparisonByIdComponent,
@@ -166,6 +169,8 @@ import { ReceiptComponent } from './components/common/receipt/receipt.component'
     BadgeModule,
     SidebarModule,
     AccordionModule,
+    GalleriaModule,
+    TabViewModule,
     InputNumberModule
   ],
   providers: [ConfirmationService, MessageService,ApiService,
