@@ -1,8 +1,17 @@
 <section class="footer_section">
-    <div class="top_strip">
-        <p class="login_btn" (click)="displayModal = true">Terms & Condition</p>
-        <p class="login_btn" (click)="displayModal1 = true">Privacy Policy</p>
-        <p class="login_btn" (click)="displayModal2 = true">Payment Option</p>
+    <div class="top_strip container">
+        <div class="row m-0">
+            <div class="col-md-6 col-12">
+                <p class="address">Address : <br> B/21, Niyamat Building,<br> Panchsheel, Ajmer <br> India</p>
+            </div>
+            <div class="col-md-6 col-12 d-sm-flex justify-content-end">
+                <div class="">
+                    <p class="login_btn" (click)="displayModal = true">Terms & Condition</p>
+                    <p class="login_btn" (click)="displayModal1 = true">Privacy Policy</p>
+                    <p class="login_btn" (click)="displayModal2 = true">Payment Option</p>
+                </div>
+            </div>
+        </div>
         <!-- <div class="btn_div d-flex align-items-center">
             
             <select class="login_btn" name="cars" id="cars" (change)="openModal($event)">

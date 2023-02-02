@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+// import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { NgxTypedJsModule } from 'ngx-typed-js';
@@ -37,7 +37,8 @@ import { BadgeModule } from 'primeng/badge';
 import { MessagesModule } from 'primeng/messages';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { SidebarModule } from 'primeng/sidebar';
-import {GalleriaModule} from 'primeng/galleria';
+import { GalleriaModule} from 'primeng/galleria';
+import { CarouselModule } from 'primeng/carousel';
 
 // import { CostBreakerComponent } from './components/custom/admin-components/cost-breaker/cost-breakup.component';
 // import { CostComponent } from './components/custom/admin-components/cost/cost.component';

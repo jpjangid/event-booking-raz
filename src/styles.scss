@@ -17,8 +17,18 @@ body {
         family: var(--fontFamily);
     };
 }
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+h2 {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+@media (max-width : 525px) {
+    h2 {
+        font-size: 20px;
+    }
 }
 a {
     color: var(--blackColor);
@@ -111,11 +121,11 @@ p {
     margin: {
         left: auto;
         right: auto;
-        bottom: 60px;
+        // bottom: 60px;
     };
     h2 {
-        font-size: 30px;
-        margin-bottom: 15px;
+        // font-size: 30px;
+        margin-bottom: 30px;
 
         span {
             color: var(--mainColor);
