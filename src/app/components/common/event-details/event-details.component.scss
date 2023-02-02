@@ -113,6 +113,11 @@ body {
 
     .p-tabview .p-tabview-panels{
         background: whitesmoke!important;
+        padding: 1rem!important;
+    }
+
+    .p-tabview-title{
+        font-size: 20px;
     }
 
     .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
@@ -167,4 +172,11 @@ body {
 }
 .card-details{
     padding: 0.5rem!important;
+}
+
+
+@media(max-width : 426px){
+    .title{
+        margin-top: 10px!important;
+    }
 }
