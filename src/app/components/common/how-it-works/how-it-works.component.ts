@@ -27,29 +27,28 @@ export class HowItWorksComponent implements OnInit {
         })
     }
 
-    signUp(form: NgForm) {
+    async signUp(form: NgForm) {
         console.log(form.value);
-        let data = JSON.parse(localStorage.getItem('uplineData'));
-        console.log(data);
-        this.bookingData.upLineId = data.upline;
-        this.bookingData.downLineId = data?.downline;
-        this.bookingData.contactNumber = String(this.bookingData.contactNumber);
-        this.bookingData.pinCode = String(this.bookingData.pinCode);
-        this.bookingData.amount = this.tableData[0].price;
+        // this.bookingData.amount = ;
+        let object = {
+          amount : Number(this.tableData[0].Total * 100)
+        }
         if (form.valid) {
-            if(this.bookingData.upLineId) {
-              this._apiService.confirmBooking(this.bookingData).then((res: any) => {
+            // if(this.bookingData.upLineId) {
+              let orderId : any
+              await this._apiService.confirmBooking(object).then((res: any) => {
                 console.log(res);
-                  this.payment('order_LBfwS0Pkr2djzL',this.tableData.Total)
-                })
-            }
-            else {
-                this.messageService.add({
-                    severity: 'error',
-                    summary: 'Error',
-                    detail: 'Something Went Worng!',
-                });
-            }
+                orderId = res.orderId;
+                this.payment(orderId,Number(this.tableData.Total))
+              })
+            // }
+            // else {
+            //     this.messageService.add({
+            //         severity: 'error',
+            //         summary: 'Error',
+            //         detail: 'Something Went Worng!',
+            //     });
+            // }
         }
         else {
             this.messageService.add({
@@ -66,7 +65,7 @@ export class HowItWorksComponent implements OnInit {
     }
 
     payment(orderId: string, amount: number): void {
-    
+      // debugger;
         let options = {
           key: 'rzp_test_HyEmsCRZK8JPca',
           amount: amount,
@@ -125,6 +124,27 @@ export class HowItWorksComponent implements OnInit {
           razorpay_signature: event.detail.razorpay_signature,
           description: 'Payment Success',
         };
+        let data = JSON.parse(localStorage.getItem('uplineData'));
+        console.log(data);
+        this.bookingData.upLineId = data.upline;
+        this.bookingData.downLineId = data?.downline;
+        this.bookingData.contactNumber = String(this.bookingData.contactNumber);
+        this.bookingData.pinCode = String(this.bookingData.pinCode);
+        this.bookingData.amount = Number(this.tableData[0].Total * 100);
+        this.bookingData.transactionalID = JSON.stringify(statusDetail)
+        if(this.bookingData.upLineId) {
+          this._apiService.customerBooking(this.bookingData).then((res:any) => {
+            console.log(res);
+            alert('booking created')
+          })
+        }
+        else {
+          this.messageService.add({
+                    severity: 'error',
+                    summary: 'Error',
+                    detail: 'Something Went Worng!',
+                });
+        }
       }
 
 }

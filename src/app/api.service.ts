@@ -37,10 +37,13 @@ export class ApiService {
   }
 
   confirmBooking(data:any) {
-    return this.http.post(this._baseurl + 'CustomerBooking/OrderId', data, {responseType : 'blob'}).toPromise();
+    return this.http.post(this._baseurl + 'CustomerBooking/OrderId', data).toPromise();
   }
 
   createOrderID(object:any) {
     return this.http.post('https://api.razorpay.com/v1/orders' , object).toPromise();
+  }
+  customerBooking(data:any) {
+    return this.http.post(this._baseurl + 'CustomerBooking', data).toPromise();
   }
 }

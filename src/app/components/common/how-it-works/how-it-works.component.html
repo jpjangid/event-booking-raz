@@ -177,7 +177,7 @@
                                     <div class="col-md-6 col-12 mb-2">
                                         <div class="form-group">
                                             <label>Country </label>
-                                            <select name="country" class="form-control" #countryId="ngModel"
+                                            <select name="country" class="form-control form-select" #countryId="ngModel"
                                                 id="countryId" required [(ngModel)]="bookingData.countryId">
                                                 <option [value]="null">Select Country</option>
                                                 <ng-container *ngFor="let item of country">

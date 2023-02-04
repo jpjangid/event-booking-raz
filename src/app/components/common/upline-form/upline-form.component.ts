@@ -17,6 +17,8 @@ export class UplineFormComponent implements OnInit {
     downLineName: new FormControl('', [Validators.required])
   })
 
+  displayModal : boolean = false;
+
   ngOnInit(): void {
     this.getUpline();
   }

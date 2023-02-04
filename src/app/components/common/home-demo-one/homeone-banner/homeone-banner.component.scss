@@ -5,6 +5,13 @@
     // background-size: 100% 100%;
     // background-repeat: no-repeat;
     // height: 70vh;
+    .carousel_img_div {
+     img {
+        height: 481px;
+        object-fit: cover;
+        width: 100%;
+     }   
+    }
     img {
         width: 100%;
         height: auto;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { lib } from 'crypto-js';
 
 @Component({
   selector: 'app-event-details',
@@ -47,56 +48,182 @@ export class EventDetailsComponent implements OnInit {
     {
       id: 1,
       name: '3N Dubai Best Deal',
-      price: 'INR 20,290',
-      images : this.images
+      price: 'INR 17,290',
+      images : this.images,
+      night : '3 Nights',
+      day : '4 Days',
+      inclusion : [
+        {li : 'Meet and Greet Assistance at the Airport by Adorn Tourism Representative'},
+        {li : '3 Daily Buffet Breakfast at the Hotel'},
+        {li : '3N Hotel Stay on mentioned Hotel(s)'},
+        {li : 'Dubai Air Port Pick Up & Evening Dhow Cruise & Dinner @ Dubai Creek'},
+        {li : 'Half Day Dubai City Tour with Approved Tourist Guide'},
+        {li : 'Desert Safari @ Red Dunes,Lehbab Area - BBQ Dinner'},
+        {li : 'Dubai Hotel Pick Up and Drop to Dubai Airport'},
+        {li : 'Visa + OTB (Ok to Board)'},
+        {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
+        {li : 'Indian Govt Tax'}
+      ]
     },
     {
       id: 2,
       name: '4N Dubai Luxury',
-      price: 'INR 20,290',
-      images : this.images
+      price: 'INR 19,180',
+      images : this.images,
+      night : '4 Nights',
+      day : '5 Days',
+      inclusion : [
+        {li : 'Meet and Greet Assistance at the Airport by Adorn Tourism Representative'},
+        {li : '4 Daily Buffet Breakfast at the Hotel'},
+        {li : '4N Hotel Stay on mentioned Hotel(s)'},
+        {li : 'Dubai Air Port Pick Up & Evening Dhow Cruise & Dinner @ Dubai Creek'},
+        {li : 'Half Day Dubai City Tour with Approved Tourist Guide'},
+        {li : 'Desert Safari @ Red Dunes,Lehbab Area - BBQ Dinner'},
+        {li : 'Dubai Hotel Pick Up and Drop to Dubai Airport'},
+        {li : 'Visa + OTB (Ok to Board)'},
+        {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
+        {li : 'Indian Govt Tax'}
+      ]
     },
     {
       id: 3,
       name: '5N Dubai Masti',
-      price: 'INR 22,290',
-      images : this.images
+      price: 'INR 23,170',
+      images : this.images,
+      night : '5 Nights',
+      day : '6 Days',
+      inclusion : [
+        {li : 'Meet and Greet Assistance at the Airport by Adorn Tourism Representative'},
+        {li : '5 Daily Buffet Breakfast at the Hotel'},
+        {li : '5N Hotel Stay on mentioned Hotel(s)'},
+        {li : 'Dubai Air Port Pick Up & Evening Dhow Cruise & Dinner @ Dubai Creek'},
+        {li : 'Half Day Dubai City Tour with Approved Tourist Guide'},
+        {li : 'Desert Safari @ Red Dunes,Lehbab Area - BBQ Dinner'},
+        {li : 'Dubai Hotel Pick Up and Drop to Dubai Airport'},
+        {li : 'Visa + OTB (Ok to Board)'},
+        {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
+        {li : 'Indian Govt Tax'}
+      ]
     },
     {
       id: 4,
       name: '3N Singapore Fun',
-      price: 'INR 25,290',
-      images : this.images
+      price: 'INR 23,800',
+      images : this.images,
+      night : '3 Nights',
+      day : '4 Days',
+      inclusion : [
+        {li : 'Meet and Greet Assistance at the Airport by Adorn Tourism Representative'},
+        {li : '3 Daily Buffet Breakfast at the Hotel'},
+        {li : '3N Hotel Stay on mentioned Hotel(s)'},
+        {li : 'Air port Pick up @ Changi International Air port'},
+        {li : 'City Tour & Sentosa (One Way Cable Car,Luge & SkyRide,Wings of Time ** 2nd show)'},
+        {li : 'Universal Studio @ Sentosa Island - Singapore'},
+        {li : 'Day At Leisure on Your Own and Hotel Pick up and Drop to Changi Airport'},
+        {li : 'Visa + OTB (Ok to Board)'},
+        {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
+        {li : 'Indian Govt Tax'}
+      ]
     },
     {
       id: 5, 
       name: '4N Singapore Masti',
-      price: 'INR 50,290',
-      images : this.images
+      price: 'INR 25,410',
+      images : this.images,
+      night : '4 Nights',
+      day : '5 Days',
+      inclusion : [
+        {li : 'Meet and Greet Assistance at the Airport by Adorn Tourism Representative'},
+        {li : '4 Daily Buffet Breakfast at the Hotel'},
+        {li : '4N Hotel Stay on mentioned Hotel(s)'},
+        {li : 'Air port Pick up @ Changi International Air port'},
+        {li : 'City Tour & Sentosa (One Way Cable Car,Luge & SkyRide,Wings of Time ** 2nd show)'},
+        {li : 'Universal Studio @ Sentosa Island - Singapore'},
+        {li : 'Day At Leisure on Your Own and Hotel Pick up and Drop to Changi Airport'},
+        {li : 'Visa + OTB (Ok to Board)'},
+        {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
+        {li : 'Indian Govt Tax'}
+      ]
     },
-    {
-      id: 6, 
-      name: '3N Bali Best Deal',
-      price: 'INR 50,290',
-      images : this.images
-    },
+    // {
+    //   id: 6, 
+    //   name: '3N Bali Best Deal',
+    //   price: 'INR 50,290',
+    //   images : this.images,
+    //   night : '3 Nights',
+    //   day : '4 Days',
+    //   inclusion : [
+    //     {li : 'Meet and Greet Assistance at the Airport by Adorn Tourism Representative'},
+    //     {li : '3 Daily Buffet Breakfast at the Hotel'},
+    //     {li : '3N Hotel Stay on mentioned Hotel(s)'},
+    //     {li : 'Air port Pick up @ Changi International Air port'},
+    //     {li : 'City Tour & Sentosa (One Way Cable Car,Luge & SkyRide,Wings of Time ** 2nd show)'},
+    //     {li : 'Universal Studio @ Sentosa Island - Singapore'},
+    //     {li : 'Day At Leisure on Your Own and Hotel Pick up and Drop to Changi Airport'},
+    //     {li : 'Visa + OTB (Ok to Board)'},
+    //     {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
+    //     {li : 'Indian Govt Tax'}
+    //   ]
+    // },
     {
       id: 7, 
       name: '5N Singapore Chill',
-      price: 'INR 50,290',
-      images : this.images
+      price: 'INR 29,050',
+      images : this.images,
+      night : '5 Nights',
+      day : '6 Days',
+      inclusion : [
+        {li : 'Meet and Greet Assistance at the Airport by Adorn Tourism Representative'},
+        {li : '5 Daily Buffet Breakfast at the Hotel'},
+        {li : '5N Hotel Stay on mentioned Hotel(s)'},
+        {li : 'Air port Pick up @ Changi International Air port'},
+        {li : 'City Tour & Sentosa (One Way Cable Car,Luge & SkyRide,Wings of Time ** 2nd show)'},
+        {li : 'Universal Studio @ Sentosa Island - Singapore'},
+        {li : 'Day At Leisure on Your Own and Hotel Pick up and Drop to Changi Airport'},
+        {li : 'Visa + OTB (Ok to Board)'},
+        {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
+        {li : 'Indian Govt Tax'}
+      ]
     },
     {
       id: 8, 
       name: '5N Best of Bali',
       price: 'INR 50,290',
-      images : this.images
+      images : this.images,
+      night : '5 Nights',
+      day : '6 Days',
+      inclusion : [
+        {li : 'Meet and Greet Assistance at the Airport by Adorn Tourism Representative'},
+        {li : '3 Daily Buffet Breakfast at the Hotel'},
+        {li : '3N Hotel Stay on mentioned Hotel(s)'},
+        {li : 'Air port Pick up @ Changi International Air port'},
+        {li : 'City Tour & Sentosa (One Way Cable Car,Luge & SkyRide,Wings of Time ** 2nd show)'},
+        {li : 'Universal Studio @ Sentosa Island - Singapore'},
+        {li : 'Day At Leisure on Your Own and Hotel Pick up and Drop to Changi Airport'},
+        {li : 'Visa + OTB (Ok to Board)'},
+        {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
+        {li : 'Indian Govt Tax'}
+      ]
     },
     {
       id: 9, 
       name: '4N Malaysia Blast',
-      price: 'INR 50,290',
-      images : this.images
+      price: 'INR 12,740',
+      images : this.images,
+      night : '4 Nights',
+      day : '5 Days',
+      inclusion : [
+        {li : 'Meet and Greet Assistance at the Airport by Adorn Tourism Representative'},
+        {li : '3 Daily Buffet Breakfast at the Hotel'},
+        {li : '3N Hotel Stay on mentioned Hotel(s)'},
+        {li : 'Air port Pick up Kuala Lumpur and Day at Leisure'},
+        {li : 'Kuala Lumpur Night Tour With Guide - With KL Tower Ticket'},
+        {li : 'Day Trip to Genting Highland & Batu Caves (One way Cable Car is Included)'},
+        {li : 'Day At Leisure on Your Own & Hotel Pick up and Drop to Kuala Lumpur AirPort'},
+        {li : 'Visa + OTB (Ok to Board)'},
+        {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
+        {li : 'Indian Govt Tax'}
+      ]
     }
   ]
 

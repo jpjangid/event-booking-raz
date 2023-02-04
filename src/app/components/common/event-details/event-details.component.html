@@ -5,7 +5,7 @@
 
     <app-navbar-style-one></app-navbar-style-one>
 
-    {{data.images | json}}
+    <!-- {{data.images | json}} -->
     <div class="container">
 		<div class="card">
 			<div class="container-fliud">
@@ -25,14 +25,14 @@
 					<div class="details col-md-6">
 						<div class="div">
                             <p class="product-title1 title m-0">{{data[0]?.name}}</p>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis unde quibusdam, quis officia voluptatum architecto, temporibus recusandae repellat vel voluptatem neque ipsum earum illum. Quis cumque atque vel enim est?</span><br>
+                            <!-- <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis unde quibusdam, quis officia voluptatum architecto, temporibus recusandae repellat vel voluptatem neque ipsum earum illum. Quis cumque atque vel enim est?</span><br> -->
                             <div class=" py-2">
-                                <p class="m-0">4N Dubai | Valid Till : December 19, 2019</p>
-                                <p>4 Nights  | 5 Days </p>
+                                <p class="m-0">{{data[0]?.name}} | Valid Till : March 31, 2023</p>
+                                <p>{{data[0].night}}  | {{data[0].day}} </p>
                             </div>
                             <h3 class="product-title">{{data[0]?.price}}</h3>
                             <div class="add-listings-btn">
-                                <button class="submit_btn">Book Now</button>
+                                <button class="submit_btn" routerLink="/customerBooking">Book Now</button>
                             </div>
                         </div>
 					</div>
@@ -43,9 +43,11 @@
         <div class="card card-details">
             <p-tabView>
                 <p-tabPanel header="Inclusion">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <ul>
+                        <li *ngFor="let item of data[0].inclusion">
+                            {{item?.li}}
+                        </li>
+                    </ul>
                 </p-tabPanel>
             </p-tabView>
         </div>
