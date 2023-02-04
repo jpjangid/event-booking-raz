@@ -25,6 +25,7 @@ export class ReceiptComponent implements OnInit {
         if(res.success){
           this.commonFunction.loader(false);
           this.user = res.returnValue[0];
+          this.user.transaction = JSON.parse(this.user.transactionalID)
           console.log(this.user);
         }
 

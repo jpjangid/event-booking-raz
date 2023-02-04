@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ApiService } from 'src/app/api.service';
 declare var Razorpay: any;
@@ -12,8 +13,8 @@ declare var Razorpay: any;
 })
 export class HowItWorksComponent implements OnInit {
 
-    constructor(private _apiService: ApiService, private messageService: MessageService) { }
-
+    constructor(private _apiService: ApiService, private messageService: MessageService, private router : Router) { }
+ 
     bookingData: any = { countryId: null,payMode : true };
 
     country: any = []
@@ -135,7 +136,20 @@ export class HowItWorksComponent implements OnInit {
         if(this.bookingData.upLineId) {
           this._apiService.customerBooking(this.bookingData).then((res:any) => {
             console.log(res);
-            alert('booking created')
+            // alert('booking created')
+            if(res.success){
+              if(res.returnValue){
+                let object = {
+                  transactionalId : JSON.stringify(statusDetail),
+                  customerBookingId : res.returnValue
+                }
+                this._apiService.customerPayment(object).then((resp:any)=>{
+                  if(resp.success){
+                    this.router.navigateByUrl('receipt/' + res.returnValue);
+                  }
+                })
+              }
+            }
           })
         }
         else {

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="add-listings-box1">
-        <div style="margin-top: 120px; padding-bottom: 20px;" class="card-qr" *ngIf="user?.customerName">
+        <div style="padding-bottom: 20px; margin: 20px 0;" class="card-qr" *ngIf="user?.customerName">
             <div class="add-listings-btn text-right p-0">
                 <button class="submit_btn mb-2" (click)="print()" type="submit">Save As PDF</button>
             </div>
@@ -37,7 +37,7 @@
                         <p style="font-size: 15px; margin-bottom: 0;"><b>Payment Mode :</b> {{user?.payMode}}</p>
                     </div>
                     <div class="col-12">
-                        <p style="font-size: 15px; margin-bottom: 0;"><b>Transactional Id :</b> {{user?.transactionalID}}</p>
+                        <p style="font-size: 15px; margin-bottom: 0;"><b>Transactional Id :</b> {{user?.transaction['payment_id']}}</p>
                     </div>
                     <div class="col-12">
                         <p style="font-size: 15px; margin-bottom: 0;"><b>Payment :</b> {{user?.price | currency : 'INR'}}</p>
