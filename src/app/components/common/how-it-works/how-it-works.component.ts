@@ -15,7 +15,7 @@ export class HowItWorksComponent implements OnInit {
 
     constructor(private _apiService: ApiService, private messageService: MessageService, private router : Router) { }
  
-    bookingData: any = { countryId: null,payMode : true };
+    bookingData: any = { countryId: null,payMode : 'online' };
 
     country: any = []
 
