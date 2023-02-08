@@ -59,7 +59,8 @@ export class HowItWorksComponent implements OnInit {
         //     });
         // }
         if(form.valid) {
-          window.location.href = 'https://adorntourism.com/dataFrom.htm'
+          localStorage.setItem('data', JSON.stringify(this.tableData[0].Total))
+          window.location.href = 'https://adorntourism.com/dataFrom.htm';
         }
         else {
             this.messageService.add({
