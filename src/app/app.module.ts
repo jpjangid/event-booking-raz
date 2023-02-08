@@ -86,6 +86,7 @@ import { EventDetailsComponent } from './components/common/event-details/event-d
 // import { OrdersComponent } from './components/custom/admin-components/orders/orders.component';
 import {TabViewModule} from 'primeng/tabview';
 import { SuccessPageComponent } from './components/common/success-page/success-page.component';
+import { CancelPageComponent } from './components/pages/cancel-page/cancel-page.component';
 
 @NgModule({
   declarations: [
@@ -136,7 +137,8 @@ import { SuccessPageComponent } from './components/common/success-page/success-p
     HomeDemoOneComponent,
     ReceiptComponent,
     EventDetailsComponent,
-    SuccessPageComponent
+    SuccessPageComponent,
+    CancelPageComponent
     // CustomerFormComponent,
     // SupplierchangerequestComponent,
     // EnquiryComparisonByIdComponent,

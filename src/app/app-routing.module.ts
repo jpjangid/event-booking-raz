@@ -7,6 +7,7 @@ import { HowItWorksComponent } from './components/common/how-it-works/how-it-wor
 import { ReceiptComponent } from './components/common/receipt/receipt.component';
 import { SuccessPageComponent } from './components/common/success-page/success-page.component';
 import { UplineFormComponent } from './components/common/upline-form/upline-form.component';
+import { CancelPageComponent } from './components/pages/cancel-page/cancel-page.component';
 // import { CostBreakerComponent } from './components/custom/admin-components/cost-breaker/cost-breakup.component';
 // import { ItemMasterComponent } from './components/custom/admin-components/item-master/item-master.component';
 // import { ManufacturingProcessListComponent } from './components/custom/admin-components/manufacturing-process-list/manufacturing-process-list.component';
@@ -64,6 +65,7 @@ const routes: Routes = [
     {path: 'receipt/:id', component: ReceiptComponent},
     {path: 'customerBooking', component: UplineFormComponent},
     {path: 'success', component: SuccessPageComponent},
+    {path: 'failed', component: CancelPageComponent},
     {path: 'event-detail/:id', component: EventDetailsComponent},
     // Here add new pages component
     // {path: '', redirectTo:'login' , pathMatch: 'full'},

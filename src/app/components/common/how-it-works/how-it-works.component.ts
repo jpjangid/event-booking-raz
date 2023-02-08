@@ -34,6 +34,15 @@ export class HowItWorksComponent implements OnInit {
         let object = {
           amount : Number(this.tableData[0].Total * 100)
         }
+        let data = JSON.parse(localStorage.getItem('uplineData'));
+        this.bookingData.upLineId = data.upline;
+        this.bookingData.downLineId = data?.downline;
+        this.bookingData.contactNumber = String(this.bookingData.contactNumber);
+        this.bookingData.pinCode = String(this.bookingData.pinCode);
+        this.bookingData.amount = Number(this.tableData[0].Total);
+
+        localStorage.setItem('bookingDetails' , JSON.stringify(this.bookingData));
+
         // if (form.valid) {
         //     // if(this.bookingData.upLineId) {
         //       let orderId : any
@@ -76,100 +85,99 @@ export class HowItWorksComponent implements OnInit {
         this.tableData[0].Total = (this.bookingData.bookingQuantity) * this.tableData[0].price; 
     }
 
-    payment(orderId: string, amount: number): void {
-      // debugger;
-        let options = {
-          key: 'rzp_test_HyEmsCRZK8JPca',
-          amount: amount,
-          name: 'Event',
-          description: 'Event Booking',
-          image: '',
-          order_id: orderId,
-          handler: function (response: any) {
-            var event = new CustomEvent('payment.success', {
-              detail: response,
-              bubbles: true,
-              cancelable: true,
-            });
-            window.dispatchEvent(event);
-          },
-          prefill: {
-            name: '',
-            email: '',
-            contact: '',
-          },
-          notes: {
-            address: '',
-          },
-          theme: {
-            color: '#3399cc',
-          },
-        };
+    // payment(orderId: string, amount: number): void {
+    //     let options = {
+    //       key: 'rzp_test_HyEmsCRZK8JPca',
+    //       amount: amount,
+    //       name: 'Event',
+    //       description: 'Event Booking',
+    //       image: '',
+    //       order_id: orderId,
+    //       handler: function (response: any) {
+    //         var event = new CustomEvent('payment.success', {
+    //           detail: response,
+    //           bubbles: true,
+    //           cancelable: true,
+    //         });
+    //         window.dispatchEvent(event);
+    //       },
+    //       prefill: {
+    //         name: '',
+    //         email: '',
+    //         contact: '',
+    //       },
+    //       notes: {
+    //         address: '',
+    //       },
+    //       theme: {
+    //         color: '#3399cc',
+    //       },
+    //     };
     
-        var rzp1 = new Razorpay(options);
-        rzp1.open();
+    //     var rzp1 = new Razorpay(options);
+    //     rzp1.open();
     
-        rzp1.on('payment.failed', (response: any) => {
-          console.log(response);
-          console.log(response.error.code);
-          console.log(response.error.description);
-          console.log(response.error.source);
-          console.log(response.error.step);
-          console.log(response.error.reason);
-          console.log(response.error.metadata.order_id);
-          console.log(response.error.metadata.payment_id);
-          let statusDetail = {
-            status: 'Payment Success',
-            payment_id: response.error.metadata.payment_id,
-            razorpay_signature: '',
-            description: response.error.description,
-          };
-        });
-      }
+    //     rzp1.on('payment.failed', (response: any) => {
+    //       console.log(response);
+    //       console.log(response.error.code);
+    //       console.log(response.error.description);
+    //       console.log(response.error.source);
+    //       console.log(response.error.step);
+    //       console.log(response.error.reason);
+    //       console.log(response.error.metadata.order_id);
+    //       console.log(response.error.metadata.payment_id);
+    //       let statusDetail = {
+    //         status: 'Payment Success',
+    //         payment_id: response.error.metadata.payment_id,
+    //         razorpay_signature: '',
+    //         description: response.error.description,
+    //       };
+    //     });
+    //   }
     
-      @HostListener('window:payment.success', ['$event'])
-      onPaymentSuccess(event: any): void {
-        console.log(event);
-        let statusDetail = {
-          status: 'Payment Success',
-          payment_id: event.detail.razorpay_payment_id,
-          razorpay_signature: event.detail.razorpay_signature,
-          description: 'Payment Success',
-        };
-        let data = JSON.parse(localStorage.getItem('uplineData'));
-        console.log(data);
-        this.bookingData.upLineId = data.upline;
-        this.bookingData.downLineId = data?.downline;
-        this.bookingData.contactNumber = String(this.bookingData.contactNumber);
-        this.bookingData.pinCode = String(this.bookingData.pinCode);
-        this.bookingData.amount = Number(this.tableData[0].Total * 100);
-        this.bookingData.transactionalID = JSON.stringify(statusDetail)
-        if(this.bookingData.upLineId) {
-          this._apiService.customerBooking(this.bookingData).then((res:any) => {
-            console.log(res);
-            // alert('booking created')
-            if(res.success){
-              if(res.returnValue){
-                let object = {
-                  transactionalId : JSON.stringify(statusDetail),
-                  customerBookingId : res.returnValue
-                }
-                this._apiService.customerPayment(object).then((resp:any)=>{
-                  if(resp.success){
-                    this.router.navigateByUrl('receipt/' + res.returnValue);
-                  }
-                })
-              }
-            }
-          })
-        }
-        else {
-          this.messageService.add({
-                    severity: 'error',
-                    summary: 'Error',
-                    detail: 'Something Went Worng!',
-                });
-        }
-      }
+    //   @HostListener('window:payment.success', ['$event'])
+    //   onPaymentSuccess(event: any): void {
+    //     console.log(event);
+    //     let statusDetail = {
+    //       status: 'Payment Success',
+    //       payment_id: event.detail.razorpay_payment_id,
+    //       razorpay_signature: event.detail.razorpay_signature,
+    //       description: 'Payment Success',
+    //     };
+    //     let data = JSON.parse(localStorage.getItem('uplineData'));
+    //     console.log(data);
+    //     this.bookingData.upLineId = data.upline;
+    //     this.bookingData.downLineId = data?.downline;
+    //     this.bookingData.contactNumber = String(this.bookingData.contactNumber);
+    //     this.bookingData.pinCode = String(this.bookingData.pinCode);
+    //     this.bookingData.amount = Number(this.tableData[0].Total * 100);
+    //     this.bookingData.transactionalID = JSON.stringify(statusDetail)
+    //     if(this.bookingData.upLineId) {
+    //       this._apiService.customerBooking(this.bookingData).then((res:any) => {
+    //         console.log(res);
+    //         // alert('booking created')
+    //         if(res.success){
+    //           if(res.returnValue){
+    //             let object = {
+    //               transactionalId : JSON.stringify(statusDetail),
+    //               customerBookingId : res.returnValue
+    //             }
+    //             this._apiService.customerPayment(object).then((resp:any)=>{
+    //               if(resp.success){
+    //                 this.router.navigateByUrl('receipt/' + res.returnValue);
+    //               }
+    //             })
+    //           }
+    //         }
+    //       })
+    //     }
+    //     else {
+    //       this.messageService.add({
+    //                 severity: 'error',
+    //                 summary: 'Error',
+    //                 detail: 'Something Went Worng!',
+    //             });
+    //     }
+    //   }
 
 }

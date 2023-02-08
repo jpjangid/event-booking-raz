@@ -4,15 +4,16 @@ import { MessageService } from 'primeng/api';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
-  selector: 'app-success-page',
-  templateUrl: './success-page.component.html',
-  styleUrls: ['./success-page.component.scss']
+  selector: 'app-cancel-page',
+  templateUrl: './cancel-page.component.html',
+  styleUrls: ['./cancel-page.component.scss']
 })
-export class SuccessPageComponent implements OnInit {
+export class CancelPageComponent implements OnInit {
+  bookingData: string;
 
   constructor(private _apiService: ApiService, private messageService: MessageService , private router : Router) { }
 
-  bookingData: any;
+
   ngOnInit(): void {
     this.bookingData = localStorage.getItem('bookingDetails');
     if (this.bookingData) {
@@ -23,19 +24,17 @@ export class SuccessPageComponent implements OnInit {
           console.log(res);
           if (res.success) {
             this.messageService.add({
-              severity: 'success',
-              summary: 'Success',
-              detail: 'Customer Registered Successfully!',
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Customer not Registered!',
             });
 
             let object = {
-              status : 'Success',
+              status : 'Failed',
               customerBookingId : res.returnValue
             }
             this._apiService.customerPayment(object).then((resp:any)=>{
-              if(resp.success){
-                this.router.navigateByUrl('receipt/' + res.returnValue);
-              }
+              console.log(resp);
             })
           }
         })
