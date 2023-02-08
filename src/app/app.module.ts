@@ -85,6 +85,7 @@ import { EventDetailsComponent } from './components/common/event-details/event-d
 // import { EnquiryComparisonByIdComponent } from './components/custom/user-components/enquiry-comparison-by-id/enquiry-comparison-by-id.component';
 // import { OrdersComponent } from './components/custom/admin-components/orders/orders.component';
 import {TabViewModule} from 'primeng/tabview';
+import { SuccessPageComponent } from './components/common/success-page/success-page.component';
 
 @NgModule({
   declarations: [
@@ -134,7 +135,8 @@ import {TabViewModule} from 'primeng/tabview';
     HowItWorksComponent,
     HomeDemoOneComponent,
     ReceiptComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    SuccessPageComponent
     // CustomerFormComponent,
     // SupplierchangerequestComponent,
     // EnquiryComparisonByIdComponent,

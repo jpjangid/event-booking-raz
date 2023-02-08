@@ -5,6 +5,7 @@ import { EventDetailsComponent } from './components/common/event-details/event-d
 import { HomeDemoOneComponent } from './components/common/home-demo-one/home-demo-one.component';
 import { HowItWorksComponent } from './components/common/how-it-works/how-it-works.component';
 import { ReceiptComponent } from './components/common/receipt/receipt.component';
+import { SuccessPageComponent } from './components/common/success-page/success-page.component';
 import { UplineFormComponent } from './components/common/upline-form/upline-form.component';
 // import { CostBreakerComponent } from './components/custom/admin-components/cost-breaker/cost-breakup.component';
 // import { ItemMasterComponent } from './components/custom/admin-components/item-master/item-master.component';
@@ -62,6 +63,7 @@ const routes: Routes = [
     {path: 'registration', component: HowItWorksComponent},
     {path: 'receipt/:id', component: ReceiptComponent},
     {path: 'customerBooking', component: UplineFormComponent},
+    {path: 'success', component: SuccessPageComponent},
     {path: 'event-detail/:id', component: EventDetailsComponent},
     // Here add new pages component
     // {path: '', redirectTo:'login' , pathMatch: 'full'},
