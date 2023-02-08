@@ -15,7 +15,7 @@ export class HowItWorksComponent implements OnInit {
 
     constructor(private _apiService: ApiService, private messageService: MessageService, private router : Router) { }
  
-    bookingData: any = { countryId: null,payMode : true };
+    bookingData: any = { countryId: null,payMode : 'online' };
 
     country: any = []
 
@@ -34,22 +34,32 @@ export class HowItWorksComponent implements OnInit {
         let object = {
           amount : Number(this.tableData[0].Total * 100)
         }
-        if (form.valid) {
-            // if(this.bookingData.upLineId) {
-              let orderId : any
-              await this._apiService.confirmBooking(object).then((res: any) => {
-                console.log(res);
-                orderId = res.orderId;
-                this.payment(orderId,Number(this.tableData.Total))
-              })
-            // }
-            // else {
-            //     this.messageService.add({
-            //         severity: 'error',
-            //         summary: 'Error',
-            //         detail: 'Something Went Worng!',
-            //     });
-            // }
+        // if (form.valid) {
+        //     // if(this.bookingData.upLineId) {
+        //       let orderId : any
+        //       await this._apiService.confirmBooking(object).then((res: any) => {
+        //         console.log(res);
+        //         orderId = res.orderId;
+        //         this.payment(orderId,Number(this.tableData.Total))
+        //       })
+        //     // }
+        //     // else {
+        //     //     this.messageService.add({
+        //     //         severity: 'error',
+        //     //         summary: 'Error',
+        //     //         detail: 'Something Went Worng!',
+        //     //     });
+        //     // }
+        // }
+        // else {
+        //     this.messageService.add({
+        //         severity: 'error',
+        //         summary: 'Error',
+        //         detail: 'Please Fill All the Details!',
+        //     });
+        // }
+        if(form.valid) {
+          window.location.href = 'https://adorntourism.com/dataFrom.htm'
         }
         else {
             this.messageService.add({

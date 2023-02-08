@@ -199,19 +199,19 @@
                                                 <!-- <label style="visibility: hidden;">Country </label> -->
                                                 <div class="form-check mb-0">
                                                     <input class="form-check-input" value="online" required
-                                                        [(ngModel)]="bookingData.payMode" type="radio" name="payMode"
-                                                        id="online">
+                                                        type="radio" name="payMode"
+                                                        id="online" checked>
                                                     <label class="form-check-label" for="online">
                                                         Online
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div *ngIf="event.submitted" class="alert alert-danger">
+                                        <!-- <div *ngIf="event.submitted" class="alert alert-danger">
                                             <div *ngIf="!bookingData.payMode">
                                                 Payment Mode is Required.
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 

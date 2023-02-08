@@ -61,6 +61,7 @@ export class NavbarStyleOneComponent implements OnInit {
   }
 
   bookEvent() {
+    // window.location.href = 'https://api.adorntourism.com/api/Dropdowns/Registration?Mode=upline'
     this.router.navigateByUrl('/customerBooking');
   }
 
