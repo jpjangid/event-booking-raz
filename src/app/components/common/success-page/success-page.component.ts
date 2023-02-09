@@ -14,7 +14,7 @@ export class SuccessPageComponent implements OnInit {
 
   bookingData: any;
   ngOnInit(): void {
-    window.location.reload();
+    // window.location.reload();
     this.bookingData = localStorage.getItem('bookingDetails');
     if (this.bookingData) {
       let bookingData = JSON.parse(this.bookingData);

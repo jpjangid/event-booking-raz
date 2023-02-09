@@ -22,6 +22,8 @@ export class HowItWorksComponent implements OnInit {
     tableData: any = [{ name: 'Event', price: '17200', Quantity: '0', Total: '0' }]
 
     ngOnInit() {
+        localStorage.removeItem('data');
+        localStorage.removeItem('bookingID')
         this._apiService.getAllCountry().then((res: any) => {
             console.log(res);
             this.country = res?.returnValue;
@@ -41,7 +43,7 @@ export class HowItWorksComponent implements OnInit {
         this.bookingData.pinCode = String(this.bookingData.pinCode);
         this.bookingData.amount = Number(this.tableData[0].Total);
 
-        localStorage.setItem('bookingDetails' , JSON.stringify(this.bookingData));
+        
 
         // if (form.valid) {
         //     // if(this.bookingData.upLineId) {
@@ -68,6 +70,35 @@ export class HowItWorksComponent implements OnInit {
         //     });
         // }
         if(form.valid) {
+
+            if(this.bookingData.upLineId) {
+                this._apiService.customerBooking(this.bookingData).then((res: any) => {
+                    console.log(res);
+                    if (res.success) {
+                    //   this.messageService.add({
+                    //     severity: 'success',
+                    //     summary: 'Success',
+                    //     detail: 'Customer Registered Successfully!',
+                    //   });
+          
+                    //   let object = {
+                    //     status : 'Success',
+                    //     customerBookingId : res.returnValue
+                    //   }
+                    // alert(res.returnValue);
+                      localStorage.setItem('bookingID', res.returnValue);
+                    }
+                })
+            }
+            else {
+                this.messageService.add({
+                    severity: 'error',
+                    summary: 'Error',
+                    detail: 'Something Went Worng!',
+                });
+            }
+
+            // localStorage.setItem('bookingDetails' , JSON.stringify(this.bookingData));
           localStorage.setItem('data', JSON.stringify(this.tableData[0].Total))
           window.location.href = 'https://adorntourism.com/dataFrom.htm';
         }
