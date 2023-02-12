@@ -87,8 +87,20 @@ export class HowItWorksComponent implements OnInit {
                     //     customerBookingId : res.returnValue
                     //   }
                     // alert(res.returnValue);
-                      localStorage.setItem('bookingID', res.returnValue);
+                    let data = res.returnValue;
+                    localStorage.setItem('bookingID', data);
+                    localStorage.setItem('bookingDetails' , JSON.stringify(this.bookingData));
+                    localStorage.setItem('data', JSON.stringify(this.tableData[0].Total))
+                    window.location.href = 'https://adorntourism.com/dataFrom.htm';
                     }
+                    else {
+                        this.messageService.add({
+                            severity: 'error',
+                            summary: 'Error',
+                            detail: 'Something Went Worng!',
+                        });
+                    }
+                    // alert(res.returnValue);
                 })
             }
             else {
@@ -98,10 +110,6 @@ export class HowItWorksComponent implements OnInit {
                     detail: 'Something Went Worng!',
                 });
             }
-
-            localStorage.setItem('bookingDetails' , JSON.stringify(this.bookingData));
-          localStorage.setItem('data', JSON.stringify(this.tableData[0].Total))
-          window.location.href = 'https://adorntourism.com/dataFrom.htm';
         }
         else {
             this.messageService.add({
