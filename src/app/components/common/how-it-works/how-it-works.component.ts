@@ -15,7 +15,7 @@ export class HowItWorksComponent implements OnInit {
 
     constructor(private _apiService: ApiService, private messageService: MessageService, private router : Router) { }
  
-    bookingData: any = { countryId: null,payMode : 'online' };
+    bookingData: any = { countryId: 1,payMode : 'online' };
 
     country: any = []
 
@@ -23,7 +23,8 @@ export class HowItWorksComponent implements OnInit {
 
     ngOnInit() {
         localStorage.removeItem('data');
-        localStorage.removeItem('bookingID')
+        localStorage.removeItem('bookingID');
+        localStorage.removeItem('bookingDetails');
         this._apiService.getAllCountry().then((res: any) => {
             console.log(res);
             this.country = res?.returnValue;
@@ -98,7 +99,7 @@ export class HowItWorksComponent implements OnInit {
                 });
             }
 
-            // localStorage.setItem('bookingDetails' , JSON.stringify(this.bookingData));
+            localStorage.setItem('bookingDetails' , JSON.stringify(this.bookingData));
           localStorage.setItem('data', JSON.stringify(this.tableData[0].Total))
           window.location.href = 'https://adorntourism.com/dataFrom.htm';
         }
