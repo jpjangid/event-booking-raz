@@ -12,6 +12,7 @@ export class EventDetailsComponent implements OnInit {
   constructor(private router : Router , private activatedRoute : ActivatedRoute) { }
 
   data : any;
+  displayModal : boolean = false;
   ngOnInit(): void {
     let data1 = this.activatedRoute.snapshot.params;
     if(data1.id){
@@ -48,7 +49,7 @@ export class EventDetailsComponent implements OnInit {
     {
       id: 1,
       name: '3N Dubai Best Deal',
-      price: 'INR 17,290',
+      price: '17290',
       images : this.images,
       night : '3 Nights',
       day : '4 Days',
@@ -60,7 +61,6 @@ export class EventDetailsComponent implements OnInit {
         {li : 'Half Day Dubai City Tour with Approved Tourist Guide'},
         {li : 'Desert Safari @ Red Dunes,Lehbab Area - BBQ Dinner'},
         {li : 'Dubai Hotel Pick Up and Drop to Dubai Airport'},
-        {li : 'Visa + OTB (Ok to Board)'},
         {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
         {li : 'Indian Govt Tax'}
       ]
@@ -68,7 +68,7 @@ export class EventDetailsComponent implements OnInit {
     {
       id: 2,
       name: '4N Dubai Luxury',
-      price: 'INR 19,180',
+      price: '19180',
       images : this.images,
       night : '4 Nights',
       day : '5 Days',
@@ -80,7 +80,6 @@ export class EventDetailsComponent implements OnInit {
         {li : 'Half Day Dubai City Tour with Approved Tourist Guide'},
         {li : 'Desert Safari @ Red Dunes,Lehbab Area - BBQ Dinner'},
         {li : 'Dubai Hotel Pick Up and Drop to Dubai Airport'},
-        {li : 'Visa + OTB (Ok to Board)'},
         {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
         {li : 'Indian Govt Tax'}
       ]
@@ -88,7 +87,7 @@ export class EventDetailsComponent implements OnInit {
     {
       id: 3,
       name: '5N Dubai Masti',
-      price: 'INR 23,170',
+      price: '23170',
       images : this.images,
       night : '5 Nights',
       day : '6 Days',
@@ -100,7 +99,6 @@ export class EventDetailsComponent implements OnInit {
         {li : 'Half Day Dubai City Tour with Approved Tourist Guide'},
         {li : 'Desert Safari @ Red Dunes,Lehbab Area - BBQ Dinner'},
         {li : 'Dubai Hotel Pick Up and Drop to Dubai Airport'},
-        {li : 'Visa + OTB (Ok to Board)'},
         {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
         {li : 'Indian Govt Tax'}
       ]
@@ -108,7 +106,7 @@ export class EventDetailsComponent implements OnInit {
     {
       id: 4,
       name: '3N Singapore Fun',
-      price: 'INR 23,800',
+      price: '23800',
       images : this.images,
       night : '3 Nights',
       day : '4 Days',
@@ -120,7 +118,6 @@ export class EventDetailsComponent implements OnInit {
         {li : 'City Tour & Sentosa (One Way Cable Car,Luge & SkyRide,Wings of Time ** 2nd show)'},
         {li : 'Universal Studio @ Sentosa Island - Singapore'},
         {li : 'Day At Leisure on Your Own and Hotel Pick up and Drop to Changi Airport'},
-        {li : 'Visa + OTB (Ok to Board)'},
         {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
         {li : 'Indian Govt Tax'}
       ]
@@ -128,7 +125,7 @@ export class EventDetailsComponent implements OnInit {
     {
       id: 5, 
       name: '4N Singapore Masti',
-      price: 'INR 25,410',
+      price: '25410',
       images : this.images,
       night : '4 Nights',
       day : '5 Days',
@@ -140,7 +137,6 @@ export class EventDetailsComponent implements OnInit {
         {li : 'City Tour & Sentosa (One Way Cable Car,Luge & SkyRide,Wings of Time ** 2nd show)'},
         {li : 'Universal Studio @ Sentosa Island - Singapore'},
         {li : 'Day At Leisure on Your Own and Hotel Pick up and Drop to Changi Airport'},
-        {li : 'Visa + OTB (Ok to Board)'},
         {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
         {li : 'Indian Govt Tax'}
       ]
@@ -160,7 +156,7 @@ export class EventDetailsComponent implements OnInit {
     //     {li : 'City Tour & Sentosa (One Way Cable Car,Luge & SkyRide,Wings of Time ** 2nd show)'},
     //     {li : 'Universal Studio @ Sentosa Island - Singapore'},
     //     {li : 'Day At Leisure on Your Own and Hotel Pick up and Drop to Changi Airport'},
-    //     {li : 'Visa + OTB (Ok to Board)'},
+    //     
     //     {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
     //     {li : 'Indian Govt Tax'}
     //   ]
@@ -168,7 +164,7 @@ export class EventDetailsComponent implements OnInit {
     {
       id: 7, 
       name: '5N Singapore Chill',
-      price: 'INR 29,050',
+      price: '29050',
       images : this.images,
       night : '5 Nights',
       day : '6 Days',
@@ -180,7 +176,6 @@ export class EventDetailsComponent implements OnInit {
         {li : 'City Tour & Sentosa (One Way Cable Car,Luge & SkyRide,Wings of Time ** 2nd show)'},
         {li : 'Universal Studio @ Sentosa Island - Singapore'},
         {li : 'Day At Leisure on Your Own and Hotel Pick up and Drop to Changi Airport'},
-        {li : 'Visa + OTB (Ok to Board)'},
         {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
         {li : 'Indian Govt Tax'}
       ]
@@ -188,7 +183,7 @@ export class EventDetailsComponent implements OnInit {
     {
       id: 8, 
       name: '5N Best of Bali',
-      price: 'INR 50,290',
+      price: '50290',
       images : this.images,
       night : '5 Nights',
       day : '6 Days',
@@ -200,7 +195,6 @@ export class EventDetailsComponent implements OnInit {
         {li : 'City Tour & Sentosa (One Way Cable Car,Luge & SkyRide,Wings of Time ** 2nd show)'},
         {li : 'Universal Studio @ Sentosa Island - Singapore'},
         {li : 'Day At Leisure on Your Own and Hotel Pick up and Drop to Changi Airport'},
-        {li : 'Visa + OTB (Ok to Board)'},
         {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
         {li : 'Indian Govt Tax'}
       ]
@@ -208,7 +202,7 @@ export class EventDetailsComponent implements OnInit {
     {
       id: 9, 
       name: '4N Malaysia Blast',
-      price: 'INR 12,740',
+      price: '12740',
       images : this.images,
       night : '4 Nights',
       day : '5 Days',
@@ -220,7 +214,6 @@ export class EventDetailsComponent implements OnInit {
         {li : 'Kuala Lumpur Night Tour With Guide - With KL Tower Ticket'},
         {li : 'Day Trip to Genting Highland & Batu Caves (One way Cable Car is Included)'},
         {li : 'Day At Leisure on Your Own & Hotel Pick up and Drop to Kuala Lumpur AirPort'},
-        {li : 'Visa + OTB (Ok to Board)'},
         {li : 'All the above excursions or sightseeing Includes Entry tickets and You will be picked and dropped to Hotel(s)'},
         {li : 'Indian Govt Tax'}
       ]
@@ -246,5 +239,19 @@ export class EventDetailsComponent implements OnInit {
           numVisible: 1
       }
   ];
+
+  routeToForm(data : any) {
+    let object = {
+      upline : 7,
+      downline : ''
+    }
+    localStorage.setItem('uplineData' , JSON.stringify(object));
+    let detailData : any = {
+      price : data[0].price,
+      name : data[0].name
+    }
+    localStorage.setItem('otherDetail', JSON.stringify(detailData));
+    this.router.navigateByUrl('/registration');
+  }
 
 }

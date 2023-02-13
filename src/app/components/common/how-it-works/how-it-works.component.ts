@@ -19,9 +19,19 @@ export class HowItWorksComponent implements OnInit {
 
     country: any = []
 
-    tableData: any = [{ name: 'Event', price: '17200', Quantity: '0', Total: '0' }]
+    tableData: any = [{ name: 'Magic 2023', price: '17200', Quantity: '0', Total: '0' }]
 
     ngOnInit() {
+        if(localStorage.getItem('otherDetail')) {
+            let details = JSON.parse(localStorage.getItem('otherDetail'));
+            // if(details) {
+                this.tableData[0].price = details.price;
+                this.tableData[0].name = details.name;
+            // }
+        }
+        else {
+            this.tableData = [{ name: 'Magic 2023', price: '17200', Quantity: '0', Total: '0' }]
+        }
         localStorage.removeItem('data');
         localStorage.removeItem('bookingID');
         localStorage.removeItem('bookingDetails');
@@ -38,8 +48,8 @@ export class HowItWorksComponent implements OnInit {
           amount : Number(this.tableData[0].Total * 100)
         }
         let data = JSON.parse(localStorage.getItem('uplineData'));
-        this.bookingData.upLineId = data.upline;
-        this.bookingData.downLineId = data?.downline;
+        this.bookingData.upLineId = Number(data.upline);
+        this.bookingData.downLineId = Number(data?.downline);
         this.bookingData.contactNumber = String(this.bookingData.contactNumber);
         this.bookingData.pinCode = String(this.bookingData.pinCode);
         this.bookingData.amount = Number(this.tableData[0].Total);

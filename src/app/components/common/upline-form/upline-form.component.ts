@@ -21,6 +21,7 @@ export class UplineFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUpline();
+    localStorage.removeItem('otherDetail')
   }
 
   uplineList : any = [];
