@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
             this.user = JSON.parse(localStorage.getItem('eventUser'));
             let object = { upLineId: this.user?.upLineId }
             this._apiService.getCustomerBookingByUplineId(object).then((res: any) => {
-                console.log(res);
+                // console.log(res);
                 if (res.success) {
                     this.customerBookingList = res.returnValue;
                 }
@@ -56,7 +56,7 @@ export class DashboardComponent implements OnInit {
     }
 
     getReceipt(customer:any){
-        console.log(customer);
+        // console.log(customer);
         this.router.navigateByUrl('/receipt/' + customer.customerBookingId)
     }
 

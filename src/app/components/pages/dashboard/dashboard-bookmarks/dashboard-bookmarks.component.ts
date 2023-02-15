@@ -59,7 +59,7 @@ export class DashboardBookmarksComponent implements OnInit {
         }
     ];
     searchChange($event) {
-        console.log($event);
+        // console.log($event);
     }
     reset() {
         this.resetOption = [];

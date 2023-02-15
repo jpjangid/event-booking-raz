@@ -29,13 +29,13 @@ export class NavbarStyleOneComponent implements OnInit {
       this.userId =  JSON.parse(id)?.upLineId;
     }
 
-    console.log(this.userId);
+    // console.log(this.userId);
   }
 
   loginFunction(login : NgForm) { 
     if(this.loginForm.valid){
       this._apiService.login(this.loginForm.value).then((res:any)=>{
-        console.log(res);
+        // console.log(res);
         if(res.success){
           localStorage.setItem('eventUser' , JSON.stringify(res.returnValue));
           // this.router.navigateByUrl('/dashboard');
@@ -48,7 +48,7 @@ export class NavbarStyleOneComponent implements OnInit {
   }
 
   openModal(event : any) {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     if(event.target.value == '1') {
       this.displayModal = true;
     }

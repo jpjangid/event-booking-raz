@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="add-listings-box1">
         <div style="padding-bottom: 20px; margin: 20px 0;" class="card-qr" *ngIf="user?.customerName">
             <div class="add-listings-btn text-right p-0">
@@ -63,4 +63,26 @@
             <p style="font-size: 20px; text-align: center;">Registration Not Found</p>
         </div>
     </div>  
-</div>
+</div> -->
+
+
+<div class="container">
+    <div class="row" style="height: 100vh; align-items: center;">
+       <div class="col-md-6 mx-auto mt-5">
+          <div class="payment">
+             <div class="payment_header">
+                <div class="check"><i class="fa fa-check" aria-hidden="true"></i></div>
+             </div>
+             <div class="content">
+				 <h2 id="myspan">{{amount}} /-</h2>
+                <h1>Payment Success !</h1>
+                <p style="padding : 5px;margin-bottom:0;">You have successfully booked your event!</p>
+				 <p style="padding : 5px">Please check your booking details on your email! </p>
+				 <div style="height: 50px;">
+				 <a routerLink="/">Go to Home</a>
+				 </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div> 

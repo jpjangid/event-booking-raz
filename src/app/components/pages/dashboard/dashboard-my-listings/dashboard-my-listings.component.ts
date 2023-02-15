@@ -59,7 +59,7 @@ export class DashboardMyListingsComponent implements OnInit {
         }
     ];
     searchChange($event) {
-        console.log($event);
+        // console.log($event);
     }
     reset() {
         this.resetOption = [];

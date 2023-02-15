@@ -19,7 +19,7 @@ export class EventDetailsComponent implements OnInit {
      this.data =  this.packages.filter(res=> res.id == data1.id)
     }
 
-    console.log(this.data);
+    // console.log(this.data);
   }
 
   images: any = {

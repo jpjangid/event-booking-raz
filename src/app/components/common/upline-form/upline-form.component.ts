@@ -32,16 +32,17 @@ export class UplineFormComponent implements OnInit {
     }
     // this.spinner.show();
     this._apiService.uplinePost(object).then((res:any)=>{
-      console.log(res);
+      // console.log(res);
       if(res.success){
         this.uplineList = res.returnValue;
+        this.uplineList.splice(this.uplineList.length-1, 1);
       }
     })
     // this.spinner.hide();
   }
 
   submitNext(upline : NgForm){
-    console.log(this.uplineForm.valid)
+    // console.log(this.uplineForm.valid)
     if(this.uplineForm.valid){
       let object = {
         upline : this.uplineForm.value?.Cond1,
@@ -66,7 +67,7 @@ export class UplineFormComponent implements OnInit {
         Cond1 : this.uplineForm.get('Cond1').value
       }
       this._apiService.uplinePost(object).then((res:any)=>{
-        console.log(res);
+        // console.log(res);
         if(res.success){
           this.downlineList = res.returnValue;
         }

@@ -52,7 +52,7 @@
                     <th>Quantity</th>
                     <th>Status</th>
                     <th>Reference</th>
-                    <th>Receipt</th>
+                    <!-- <th>Receipt</th> -->
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-customer let-i="rowIndex">
@@ -69,7 +69,7 @@
                     <td>{{customer?.bookingQuantity}}</td>
                     <td>Approved</td>
                     <td>{{customer?.transactionalID}}</td>
-                    <td><a (click)="getReceipt(customer)" style="text-decoration: underline; font-size: 12px;">get Receipt</a></td>
+                    <!-- <td><a (click)="getReceipt(customer)" style="text-decoration: underline; font-size: 12px;">get Receipt</a></td> -->
                 </tr>
             </ng-template>
             <ng-template pTemplate="emptymessage">

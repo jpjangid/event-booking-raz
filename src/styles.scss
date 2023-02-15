@@ -1227,15 +1227,15 @@ textarea.form-control {
                         repeat: no-repeat;
                         position: center center !important;
                     };
-                    &.bg1 {
-                        background-image: url(assets/img/blog/blog4.jpg);
-                    }
-                    &.bg2 {
-                        background-image: url(assets/img/blog/blog5.jpg);
-                    }
-                    &.bg3 {
-                        background-image: url(assets/img/blog/blog6.jpg);
-                    }
+                    // &.bg1 {
+                    //     background-image: url(assets/img/blog/blog4.jpg);
+                    // }
+                    // &.bg2 {
+                    //     background-image: url(assets/img/blog/blog5.jpg);
+                    // }
+                    // &.bg3 {
+                    //     background-image: url(assets/img/blog/blog6.jpg);
+                    // }
                 }
                 &::before, &::after {
                     transition: all .8s cubic-bezier(.2, 1, .22, 1);
