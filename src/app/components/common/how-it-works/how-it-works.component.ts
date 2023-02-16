@@ -257,6 +257,7 @@ export class HowItWorksComponent implements OnInit {
                 this._apiService.customerPayment(object).then((resp:any)=>{
                   if(resp.success){
                     this.router.navigateByUrl('receipt/' + res.returnValue);
+                    
                   }
                 })
               }
