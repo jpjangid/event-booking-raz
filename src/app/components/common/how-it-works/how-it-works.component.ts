@@ -233,6 +233,7 @@ export class HowItWorksComponent implements OnInit {
         this.bookingData.amount = Number(this.tableData[0].Total);
         this.bookingData.price = Number(this.tableData[0].price);
         this.bookingData.totalPrice = Number(this.tableData[0].Total);
+        this.bookingData.orderNo = String(statusDetail.payment_id);
         this.bookingData.transactionalID = JSON.stringify(statusDetail)
         if(this.bookingData.upLineId) {
           await this._apiService.customerBooking(this.bookingData).then((res:any) => {
@@ -240,7 +241,7 @@ export class HowItWorksComponent implements OnInit {
             // alert('booking created')
             if(res.success){
               localStorage.setItem('amount', JSON.stringify(this.bookingData.amount))
-              this.router.navigateByUrl('receipt/' + res.returnValue);
+              // this.router.navigateByUrl('receipt/' + res.returnValue);
 
               //got error so redirect before
 
@@ -251,7 +252,7 @@ export class HowItWorksComponent implements OnInit {
                 }
                 this._apiService.customerPayment(object).then((resp:any)=>{
                   if(resp.success){
-                    // this.router.navigateByUrl('receipt/' + res.returnValue);
+                    this.router.navigateByUrl('receipt/' + res.returnValue);
                   }
                 })
               }
