@@ -242,7 +242,7 @@ export class HowItWorksComponent implements OnInit {
             debugger;
             if(res.success){
               localStorage.setItem('amount', JSON.stringify(this.bookingData.amount))
-              this.router.navigateByUrl('receipt/' + res.returnValue);
+              // this.router.navigateByUrl('receipt/' + res.returnValue);
 
               //got error so redirect before
 
@@ -256,7 +256,7 @@ export class HowItWorksComponent implements OnInit {
                 }
                 this._apiService.customerPayment(object).then((resp:any)=>{
                   if(resp.success){
-                    // this.router.navigateByUrl('receipt/' + res.returnValue);
+                    this.router.navigateByUrl('receipt/' + res.returnValue);
                   }
                 })
               }
