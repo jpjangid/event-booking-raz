@@ -60,11 +60,11 @@ export class HowItWorksComponent implements OnInit {
         // this.bookingData.amount = ;
         let object = {
           // amount : Number(this.tableData[0].Total * 100)
-          amount : Number(10000)
+          amount : Number(1000)
         }
         let data = JSON.parse(localStorage.getItem('uplineData'));
         this.bookingData.upLineId = Number(data?.upline);
-        this.bookingData.downLineId = Number(data?.downline);
+        this.bookingData.downLineId = Number(data?.downline ?? 0);
         this.bookingData.contactNumber = String(this.bookingData.contactNumber);
         this.bookingData.pinCode = String(this.bookingData.pinCode);
         this.bookingData.amount = Number(this.tableData[0].Total);
@@ -226,8 +226,8 @@ export class HowItWorksComponent implements OnInit {
         };
         let data = JSON.parse(localStorage.getItem('uplineData'));
         // console.log(data);
-        this.bookingData.upLineId = data.upline;
-        this.bookingData.downLineId = data?.downline;
+        this.bookingData.upLineId = Number(data.upline);
+        this.bookingData.downLineId = Number(data?.downline ?? 0);
         this.bookingData.contactNumber = String(this.bookingData.contactNumber);
         this.bookingData.pinCode = String(this.bookingData.pinCode);
         this.bookingData.amount = Number(this.tableData[0].Total);
@@ -239,20 +239,24 @@ export class HowItWorksComponent implements OnInit {
           await this._apiService.customerBooking(this.bookingData).then((res:any) => {
             // console.log(res);
             // alert('booking created')
+            debugger;
             if(res.success){
               localStorage.setItem('amount', JSON.stringify(this.bookingData.amount))
-              // this.router.navigateByUrl('receipt/' + res.returnValue);
+              this.router.navigateByUrl('receipt/' + res.returnValue);
 
               //got error so redirect before
 
               if(res.returnValue){
                 let object = {
                   transactionalId : JSON.stringify(statusDetail),
-                  customerBookingId : res.returnValue
+                  customerBookingId : res.returnValue,
+                  orderNo : String(statusDetail.payment_id),
+                  addresses : this.bookingData.city,
+                  emailAddress : this.bookingData.emailAddress
                 }
                 this._apiService.customerPayment(object).then((resp:any)=>{
                   if(resp.success){
-                    this.router.navigateByUrl('receipt/' + res.returnValue);
+                    // this.router.navigateByUrl('receipt/' + res.returnValue);
                   }
                 })
               }

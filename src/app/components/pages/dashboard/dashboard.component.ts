@@ -22,6 +22,11 @@ export class DashboardComponent implements OnInit {
                 // console.log(res);
                 if (res.success) {
                     this.customerBookingList = res.returnValue;
+                    this.customerBookingList.forEach(element => {
+                        let data = JSON.parse(element.transactionalID);
+                        element.transactionalID = data.payment_id;
+                        element.status = data.status;
+                    });
                 }
             })
         }
