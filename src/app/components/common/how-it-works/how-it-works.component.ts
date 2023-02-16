@@ -55,12 +55,20 @@ export class HowItWorksComponent implements OnInit {
       }
     }
 
+    onClick(event:any) {
+      console.log(event.target.value);
+      if(!(event.target.value > 0 && event.target.value < 20)) {
+        this.bookingData.bookingQuantity = ''
+      }
+    }
+
     async signUp(form: NgForm) {
+      // alert(this.tableData[0].Total);
         // console.log(form.value);
         // this.bookingData.amount = ;
         let object = {
           // amount : Number(this.tableData[0].Total * 100)
-          amount : Number(10000)
+          amount : Number(1000)
         }
         let data = JSON.parse(localStorage.getItem('uplineData'));
         this.bookingData.upLineId = Number(data?.upline);
@@ -250,14 +258,14 @@ export class HowItWorksComponent implements OnInit {
                   transactionalId : JSON.stringify(statusDetail),
                   customerBookingId : res.returnValue,
                   customerName : this.bookingData.customerName,
-                  yourId : this.bookingData.yourId,
-                  amount : this.bookingData.amount,
+                  iridNo : this.bookingData.yourId,
+                  emailAddress : this.bookingData.emailAddress,
+                  totalPrice : this.bookingData.amount,
                   orderNo : statusDetail.payment_id
                 }
                 this._apiService.customerPayment(object).then((resp:any)=>{
                   if(resp.success){
                     this.router.navigateByUrl('receipt/' + res.returnValue);
-                    
                   }
                 })
               }
