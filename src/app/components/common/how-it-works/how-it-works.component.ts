@@ -24,7 +24,7 @@ export class HowItWorksComponent implements OnInit {
 
     acceptTerms:boolean = false;
 
-    tableData: any = [{ name: 'Magic 2023', price: '17200', Quantity: '0', Total: '0' }]
+    tableData: any = [{ name: 'Magic 2023', price: '10', Quantity: '0', Total: '0' }]
 
     ngOnInit() {
         if(localStorage.getItem('otherDetail')) {
@@ -35,7 +35,7 @@ export class HowItWorksComponent implements OnInit {
             // }
         }
         else {
-            this.tableData = [{ name: 'Magic 2023', price: '17200', Quantity: '0', Total: '0' }]
+            this.tableData = [{ name: 'Magic 2023', price: '10', Quantity: '0', Total: '0' }]
         }
         localStorage.removeItem('data');
         localStorage.removeItem('bookingID');
@@ -67,12 +67,12 @@ export class HowItWorksComponent implements OnInit {
         // console.log(form.value);
         // this.bookingData.amount = ;
         let object = {
-          // amount : Number(this.tableData[0].Total * 100)
-          amount : Number(1000)
+          amount : Number(this.tableData[0].Total * 100)
+          // amount : Number(1000)
         }
         let data = JSON.parse(localStorage.getItem('uplineData'));
         this.bookingData.upLineId = Number(data?.upline);
-        this.bookingData.downLineId = Number(data?.downline);
+        this.bookingData.downLineId = Number(data?.downline ?? 0);
         this.bookingData.contactNumber = String(this.bookingData.contactNumber);
         this.bookingData.pinCode = String(this.bookingData.pinCode);
         this.bookingData.amount = Number(this.tableData[0].Total);
@@ -234,8 +234,8 @@ export class HowItWorksComponent implements OnInit {
         };
         let data = JSON.parse(localStorage.getItem('uplineData'));
         // console.log(data);
-        this.bookingData.upLineId = data.upline;
-        this.bookingData.downLineId = data?.downline;
+        this.bookingData.upLineId = Number(data.upline);
+        this.bookingData.downLineId = Number(data?.downline ?? 0);
         this.bookingData.contactNumber = String(this.bookingData.contactNumber);
         this.bookingData.pinCode = String(this.bookingData.pinCode);
         this.bookingData.amount = Number(this.tableData[0].Total);
