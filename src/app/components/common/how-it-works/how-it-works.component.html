@@ -51,7 +51,7 @@
                                         <div class="form-group">
                                             <label>Booking Quantity </label>
                                             <input type="number" (blur)="getTotalAmount()" class="form-control" name="bookingQuantity"
-                                                #bookingQuantity="ngModel" [(ngModel)]="bookingData.bookingQuantity"
+                                                #bookingQuantity="ngModel" (change)="onClick($event)" [(ngModel)]="bookingData.bookingQuantity"
                                                 placeholder="Enter Booking Quantity" required>
                                             <div *ngIf="event.submitted || bookingQuantity.touched"
                                                 class="alert alert-danger">

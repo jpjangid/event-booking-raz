@@ -25,7 +25,7 @@
     <p-table #dt [value]="customerBookingList" dataKey="id" [rowHover]="true" [rows]="50"
             responsiveLayout="scroll" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
             [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-            [filterDelay]="0" [globalFilterFields]="['name','customerBookingId','payMode','upLineName','customerName','contactNumber', 'emailAddress', 'bookingQuantity', 'transactionalID']">
+            [filterDelay]="0" [globalFilterFields]="['downLineName', 'yourId', 'customerName', 'contactNumber', 'emailAddress', 'bookingQuantity', 'status', 'transactionalID']">
             <ng-template pTemplate="caption">
                 <span class="p-input-icon-left d-flex align-items-center">
                     <i class="pi pi-search"></i>
@@ -35,7 +35,8 @@
                                  [(ngModel)]="dateFilterVal"
                                 (onSelect)="searchFilter($event)">
                             </p-calendar>
-                            <p-button type="button" class="ml-2" (click)="reset(dt)" icon="bx bx-reset"></p-button>
+                            <p-button type="button" class="ml-2" (click)="reset(dt)" icon="bx bx-reset" pTooltip="Reset" tooltipPosition="bottom"></p-button>
+                            <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success mx-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
                 </span>
             </ng-template>
             <ng-template pTemplate="header">
@@ -44,14 +45,14 @@
                     <th>Order Id</th>
                     <th style="min-width: 150px;">Booking Date</th>
                     <th>Payment Mode</th>
-                    <th>Downline Name</th>
+                    <th *ngIf="downLine">Downline Name</th>
                     <th>IR Id</th>
                     <th>Name</th>
                     <th>Mobile No.</th>
                     <th>Email Address</th>
                     <th>Quantity</th>
                     <th>Status</th>
-                    <th>Reference</th>
+                    <th>Order Number</th>
                     <!-- <th>Receipt</th> -->
                 </tr>
             </ng-template>
@@ -61,7 +62,7 @@
                     <td>{{customer?.customerBookingId}}</td>
                     <td>{{customer?.bookingDate | date}}</td>
                     <td>{{customer?.payMode}}</td>
-                    <td>{{customer?.downLineName}}</td>
+                    <td *ngIf="downLine">{{customer?.downLineName}}</td>
                     <td>{{customer?.yourId}}</td>
                     <td>{{customer?.customerName}}</td>
                     <td>{{customer?.contactNumber}}</td>
