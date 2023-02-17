@@ -22,7 +22,7 @@
     </ng-container>
     <!-- End -->
 
-    <p-table #dt [value]="customerBookingList" dataKey="id" [rowHover]="true" [rows]="10"
+    <p-table #dt [value]="customerBookingList" dataKey="id" [rowHover]="true" [rows]="50"
             responsiveLayout="scroll" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
             [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
             [filterDelay]="0" [globalFilterFields]="['name','customerBookingId','payMode','upLineName','customerName','contactNumber', 'emailAddress', 'bookingQuantity', 'transactionalID']">

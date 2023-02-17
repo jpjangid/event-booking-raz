@@ -236,6 +236,7 @@ export class HowItWorksComponent implements OnInit {
         this.bookingData.orderNo = String(statusDetail.payment_id);
         this.bookingData.transactionalID = JSON.stringify(statusDetail)
         if(this.bookingData.upLineId) {
+          this.commonFunction.loader(true);
           await this._apiService.customerBooking(this.bookingData).then((res:any) => {
             // console.log(res);
             // alert('booking created')
@@ -256,8 +257,12 @@ export class HowItWorksComponent implements OnInit {
                 }
                 this._apiService.customerPayment(object).then((resp:any)=>{
                   if(resp.success){
+                    this.commonFunction.loader(false);
                     this.router.navigateByUrl('receipt/' + res.returnValue);
-                    
+                  }
+                  
+                  else{
+                    this.commonFunction.loader(false);
                   }
                 })
               }
