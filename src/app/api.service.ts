@@ -51,4 +51,11 @@ export class ApiService {
   customerPayment(data:any) {
     return this.http.post(this._baseurl + 'CustomerBooking/CustomerPayment', data).toPromise();
   }
+
+  approvalAPI(object : any) {
+    return this.http.put(this._baseurl + 'CustomerBooking', object).toPromise();
+  }
+  deleteAPI(id : any) {
+    return this.http.delete(this._baseurl + 'CustomerBooking/' + id).toPromise();
+  }
 }

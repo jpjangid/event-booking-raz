@@ -10,7 +10,7 @@ export class StatsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.counter);
+    console.log(this.counter);
   }
 
 }

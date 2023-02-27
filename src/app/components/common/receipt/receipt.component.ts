@@ -10,12 +10,14 @@ import { AppUtility } from 'src/app/interceptor/appUtitlity';
 })
 export class ReceiptComponent implements OnInit {
   amount: string;
+  mode: string;
 
   constructor(private router : ActivatedRoute , private route : Router , private _apiService : ApiService , private commonFunction : AppUtility) { }
 
   user : any = {};
   ngOnInit(): void {
     this.amount = localStorage.getItem('amount');
+    this.mode = localStorage.getItem('mode');
     this.commonFunction.loader(true);
     let id = this.router.snapshot.params;
     let object = {

@@ -1,5 +1,7 @@
 <!-- <app-dashboard-sidemenu></app-dashboard-sidemenu> -->
-
+<p-toast
+  [breakpoints]="{'575px': {width: '100%', right: '0', left: '0', display: 'flex', 'justify-content': 'center', 'align-items': 'center'}}">
+</p-toast>
 <!-- Start Main Content Wrapper Area -->
 <div class="main-content d-flex flex-column">
 
@@ -17,8 +19,8 @@
     <!-- End Breadcrumb Area -->
 
     <!-- Start -->
-    <ng-container *ngIf="customerBookingList.length > 0">
-        <app-stats [counter]="customerBookingList[0]"></app-stats>
+    <ng-container *ngIf="valueObject.length > 0">
+        <app-stats [counter]="valueObject[0]"></app-stats>
     </ng-container>
     <!-- End -->
 
@@ -42,15 +44,20 @@
             <ng-template pTemplate="header">
                 <tr>
                     <th>S. No.</th>
-                    <th>Order Id</th>
+                    <th *ngIf="this.user?.upLineName == 'Admin'">Action</th>
+                    <!-- <th>Order Id</th> -->
                     <th style="min-width: 150px;">Booking Date</th>
                     <th>Payment Mode</th>
+                    <th>Payment Through</th>
+                    <th *ngIf="this.user?.upLineName == 'Admin'">Upline Name</th>
                     <th *ngIf="downLine">Downline Name</th>
+                    <th>Screenshot</th>
                     <th>IR Id</th>
                     <th>Name</th>
                     <th>Mobile No.</th>
                     <th>Email Address</th>
                     <th>Quantity</th>
+                    <th>Total Amount</th>
                     <th>Status</th>
                     <th>Order Number</th>
                     <!-- <th>Receipt</th> -->
@@ -59,16 +66,34 @@
             <ng-template pTemplate="body" let-customer let-i="rowIndex">
                 <tr>
                     <td>{{i+1}}</td>
-                    <td>{{customer?.customerBookingId}}</td>
+                    <th *ngIf="this.user?.upLineName == 'Admin'" class="text-center">
+                        <div *ngIf="customer.payMode == 'offline'" class="d-flex align-items-center justify-content-evenly">
+                            <ng-container *ngIf="customer.isApproved == true">
+                                <span>Approved</span>
+                            </ng-container>
+                            <ng-container *ngIf="!(customer.isApproved == true)">
+                                <i (click)="actionBTN(customer, 'approve')" class="pi pi-check" style="font-weight : 900; cursor:pointer;"></i>
+                                <span (click)="actionBTN(customer, 'reject', customer.customerBookingId)" style="cursor : pointer;">X</span>
+                            </ng-container>
+                        </div>
+                        <div *ngIf="customer.payMode == 'online'">
+                            -
+                        </div>
+                    </th>
+                    <!-- <td>{{customer?.customerBookingId}}</td> -->
                     <td>{{customer?.bookingDate | date}}</td>
                     <td>{{customer?.payMode}}</td>
+                    <td>{{customer?.paymentType == '' ? 'Razorpay' : customer?.paymentType}}</td>
+                    <td *ngIf="this.user?.upLineName == 'Admin'">{{customer?.upLineName}}</td>
                     <td *ngIf="downLine">{{customer?.downLineName}}</td>
+                    <td><a href="http://api.adorntourism.com/Upload/{{customer?.documentPath}}" target="_blank" style="border: 1px solid #0a1847;border-radius: 5px;padding: 5px;">Document</a></td>
                     <td>{{customer?.yourId}}</td>
                     <td>{{customer?.customerName}}</td>
                     <td>{{customer?.contactNumber}}</td>
                     <td>{{customer?.emailAddress}}</td>
                     <td>{{customer?.bookingQuantity}}</td>
-                    <td>{{customer?.status}}</td>
+                    <td>{{customer?.totalPrice | currency : 'INR'}}</td>
+                    <td>{{customer?.status == '' ? 'Payment Success' : customer?.status}}</td>
                     <td>{{customer?.transactionalID}}</td>
                     <!-- <td><a (click)="getReceipt(customer)" style="text-decoration: underline; font-size: 12px;">get Receipt</a></td> -->
                 </tr>
@@ -88,4 +113,6 @@
     <app-copyrights></app-copyrights>
 
 </div>
+
+<!-- <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog> -->
 <!-- End Main Content Wrapper Area -->

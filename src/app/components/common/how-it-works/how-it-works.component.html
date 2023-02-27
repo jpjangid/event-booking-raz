@@ -195,23 +195,106 @@
                                     <div class="col-md-6 col-12 mb-2">
                                         <label>Payment Mode</label>
                                         <div class="row m-0 w-100">
-                                            <div class="col-md-6 col-12 d-flex align-items-center">
+                                            <div class="col-md-6 col-12 d-flex align-items-center" style="width:100%">
                                                 <!-- <label style="visibility: hidden;">Country </label> -->
                                                 <div class="form-check mb-0">
                                                     <input class="form-check-input" value="online" required
-                                                        type="radio" name="payMode"
-                                                        id="online" checked>
+                                                        type="radio" (change)="onPaymentClick()" name="payMode"
+                                                        id="online" [(ngModel)]="bookingData.payMode">
                                                     <label class="form-check-label" for="online">
                                                         Online
                                                     </label>
                                                 </div>
+                                                <div class="form-check mb-0" style="margin-left: 20px;">
+                                                    <input class="form-check-input" value="offline" required
+                                                        type="radio" name="payMode"
+                                                        id="offline" (change)="onPaymentClick()" [(ngModel)]="bookingData.payMode">
+                                                    <label class="form-check-label" for="offline">
+                                                        Offline
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <!-- <div *ngIf="event.submitted" class="alert alert-danger">
+                                        <div *ngIf="event.submitted" class="alert alert-danger">
                                             <div *ngIf="!bookingData.payMode">
                                                 Payment Mode is Required.
                                             </div>
-                                        </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 mb-2" *ngIf="imageCheck">
+                                        <div class="form-group">
+                                            <label>Payment Transferred In</label>
+                                            <select name="paymentType" class="form-control form-select" #paymentType="ngModel"
+                                                id="paymentType" required [(ngModel)]="bookingData.paymentType">
+                                                <option value='' disabled>Please Select</option>
+                                                <option value="Google Pay">Google Pay</option>
+                                                <option value="UPI">UPI</option>
+                                                <option value="Bank Transfer">Bank Transfer</option>
+                                            </select>
+                                            <div *ngIf="event.submitted || paymentType.touched"
+                                                class="alert alert-danger">
+                                                <div *ngIf="paymentType.errors?.['required']">
+                                                    Field is Required.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 mb-2" *ngIf="imageCheck">
+                                        <div class="form-group">
+                                            <label>Payment Screenshot </label>
+                                            <input type="file" (change)="onImageClick($event)" class="form-control" name="documentPath" #documentPath="ngModel"
+                                                [(ngModel)]="bookingData.documentPath" [required]="imageCheck">
+                                            <div *ngIf="event.submitted || documentPath.touched" class="alert alert-danger">
+                                                <div *ngIf="documentPath.errors?.['required']">
+                                                    Screenshot is Required.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 mb-2" *ngIf="imageCheck">
+                                        <div class="form-group">
+                                            <table class="table table-bordered">
+                                                <tbody>
+                                                  <tr>
+                                                    <th scope="row">Google Pay / Phone Pay</th>
+                                                    <td>+917976881807</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">UPI ID</th>
+                                                    <td>adorntourism@ibl <br>adorntourism@axl </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+
+                                              <table class="table table-bordered">
+                                                <tbody>
+                                                  <tr>
+                                                    <th scope="row">Bank Name</th>
+                                                    <td>HDFC</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">Account Type</th>
+                                                    <td>Current Account</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">Account Name</th>
+                                                    <td>Adorn Tourism Private Limited</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">Account Number</th>
+                                                    <td>50200063075035</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">Ifsc Code</th>
+                                                    <td>HDFC0002587</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">Address</th>
+                                                    <td>Vaishali Nagar, Ajmer, Rajasthan</td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                        </div>
                                     </div>
                                 </div>
 

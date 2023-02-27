@@ -35,7 +35,7 @@ export class UplineFormComponent implements OnInit {
       // console.log(res);
       if(res.success){
         this.uplineList = res.returnValue;
-        this.uplineList.splice(this.uplineList.length-1, 1);
+        this.uplineList.splice(this.uplineList.length-2, 2);
       }
     })
     // this.spinner.hide();

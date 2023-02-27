@@ -73,11 +73,20 @@
              <div class="payment_header">
                 <div class="check"><i class="fa fa-check" aria-hidden="true"></i></div>
              </div>
-             <div class="content">
+             <div class="content" *ngIf="mode == 'online'">
 				 <h2 id="myspan">{{amount}} /-</h2>
                 <h1>Payment Success !</h1>
                 <p style="padding : 5px;margin-bottom:0;">You have successfully booked your event!</p>
 				 <p style="padding : 5px">Please check your booking details on your email! </p>
+				 <div style="height: 50px;">
+				 <a routerLink="/">Go to Home</a>
+				 </div>
+             </div>
+             <div class="content" *ngIf="mode == 'offline'">
+				 <!-- <h2 id="myspan">{{amount}} /-</h2> -->
+                <h1>Event Booked!</h1>
+                <p style="padding : 5px;margin-bottom:0;">You have successfully booked your event!</p>
+				 <p style="padding : 5px">We will verify your details and you will get confirmation on E-mail! </p>
 				 <div style="height: 50px;">
 				 <a routerLink="/">Go to Home</a>
 				 </div>
